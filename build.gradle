@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'org.cinema'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+jar{
+    manifest {
+        attributes'Main-Class': 'Main'
+    }
+    archiveName='Cinema.jar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
