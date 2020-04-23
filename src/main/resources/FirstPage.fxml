@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.firstpage">
    <children>
       <ImageView fitHeight="112.0" fitWidth="200.0" layoutX="400.0" layoutY="226.0" AnchorPane.topAnchor="110.0">
          <image>
@@ -26,12 +26,12 @@
             <Image url="@Images/gf1.gif" />
          </image>
       </ImageView>
-      <Button layoutX="1043.0" layoutY="434.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="270.0" style="-fx-background-radius: 50; -fx-background-color: FD8221;" text="Login" textFill="WHITE">
+      <Button fx:id="loginB" layoutX="1043.0" layoutY="434.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="80.0" prefWidth="270.0" style="-fx-background-radius: 50; -fx-background-color: FD8221;" text="Login" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button layoutX="1039.0" layoutY="308.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="270.0" style="-fx-background-radius: 50; -fx-background-color: FD8221;" text="Register" textFill="WHITE">
+      <Button fx:id="registerB" layoutX="1039.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="80.0" prefWidth="270.0" style="-fx-background-radius: 50; -fx-background-color: FD8221;" text="Register" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
@@ -41,15 +41,20 @@
             <Font name="Arial" size="250.0" />
          </font>
       </Text>
-      <TextField fx:id="username" layoutX="1024.0" layoutY="93.0" prefHeight="60.0" prefWidth="290.0" promptText="Username">
+      <TextField fx:id="usernameField" layoutX="1024.0" layoutY="93.0" prefHeight="60.0" prefWidth="290.0" promptText="Username">
          <font>
             <Font size="27.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="password" layoutX="1024.0" layoutY="196.0" prefHeight="60.0" prefWidth="290.0" promptText="Password">
+      <PasswordField fx:id="passwordField" layoutX="1024.0" layoutY="196.0" prefHeight="60.0" prefWidth="290.0" promptText="Password">
          <font>
             <Font size="27.0" />
          </font>
       </PasswordField>
+      <Text fx:id="text" fill="WHITE" layoutX="969.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="382.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
