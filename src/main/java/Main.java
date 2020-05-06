@@ -1,3 +1,4 @@
+import Services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,10 +13,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        UserService.loadUsersFromFile();
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("empty.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("FirstPage.fxml"));
         primaryStage.setTitle("Registration Example");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 1366,768));
+        primaryStage.setFullScreen(true);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }
