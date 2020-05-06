@@ -9,7 +9,7 @@ public class Movie {
     private String description;
     private String trailer;
     private String image;
-    private Double price;
+    private  double price;
     private int sits;
     private List<Date> date;
     private List<String> comments=new ArrayList<>();
@@ -18,7 +18,7 @@ public class Movie {
     public Movie(){
     }
 
-    public Movie(String title, String description, String trailer, String image, Double price, int sits, List<Date> date) {
+    public Movie(String title, String description, String trailer, String image,  double price, int sits, List<Date> date) {
         this.title = title;
         this.description = description;
         this.trailer = trailer;
@@ -62,11 +62,11 @@ public class Movie {
         this.image = image;
     }
 
-    public Double getPrice() {
+    public  double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice( double price) {
         this.price = price;
     }
 
@@ -113,5 +113,20 @@ public class Movie {
     @Override
     public int hashCode() {
         return Objects.hash(title);
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", trailer='" + trailer + '\'' +
+                ", image='" + image + '\'' +
+                ", price=" + price +
+                ", sits=" + sits +
+                ", date=" + date +
+                ", comments=" + comments +
+                ", winnings=" + winnings +
+                '}';
     }
 }
