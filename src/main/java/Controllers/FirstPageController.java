@@ -1,5 +1,6 @@
 package Controllers;
 
+import Services.MovieService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,11 +32,15 @@ public class FirstPageController {
     private Text text;
 
     public void setMoviesPage() throws IOException {
+
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MoviesPage.fxml"));
         Stage stage=new Stage();
         stage.setTitle("Movies Page");
         stage.setScene(new Scene(root, 1366,768));
         stage.setFullScreen(true);
+        MovieService.loadMoviesFromFile();
+        MovieService.setMovies();
+
         stage.show();
     }
 
