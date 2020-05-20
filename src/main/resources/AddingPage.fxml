@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddingPageController">
+
+   <children>
+      <Text fill="WHITE" layoutX="488.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Movie" wrappingWidth="363.96044921875">
+         <font>
+            <Font size="53.0" />
+         </font>
+      </Text>
+      <TextField fx:id="title" layoutX="307.0" layoutY="146.0" />
+      <Text fill="WHITE" layoutX="307.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="306.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="description" layoutX="307.0" layoutY="225.0" prefHeight="52.0" prefWidth="364.0" />
+      <Text fill="WHITE" layoutX="305.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAILER URL:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="trailer" layoutX="307.0" layoutY="326.0" />
+      <Text fill="WHITE" layoutX="307.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMAGE:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="image" layoutX="307.0" layoutY="395.0" />
+      <TextField fx:id="price" layoutX="307.0" layoutY="468.0" />
+      <TextField fx:id="sits" layoutX="307.0" layoutY="542.0" />
+      <TextField fx:id="dates" layoutX="309.0" layoutY="623.0" />
+      <Text fill="WHITE" layoutX="310.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRICE:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="307.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SITS:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="311.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATES">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="489.0" layoutY="623.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="+" />
+      <Button fx:id = "addButton" layoutX="771.0" layoutY="611.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF;" text="ADD MOVIE" />
+   </children>
+</AnchorPane>

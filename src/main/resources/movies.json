@@ -1,1 +1,122 @@
-[]
+[ {
+  "title" : "StarWars",
+  "description" : "cevadescr",
+  "trailer" : "trailer",
+  "image" : "https://images-na.ssl-images-amazon.com/images/I/81nXcPXv69L.jpg",
+  "price" : 10.1,
+  "sits" : 10,
+  "date" : [ ],
+  "comments" : [ ],
+  "winnings" : 0
+},
+  {
+    "title" : "StarWars",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/81nXcPXv69L.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Avengers",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ae_digital_packshot.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "BloodShot",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://m.media-amazon.com/images/M/MV5BYjA5YjA2YjUtMGRlNi00ZTU4LThhZmMtNDc0OTg4ZWExZjI3XkEyXkFqcGdeQXVyNjUyNjI3NzU@._V1_.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "BlackWindow",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://static.cinemagia.ro/img/db/movie/19/17/821/black-widow-370687l.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Mulan",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://www.gstatic.com/tv/thumb/v22vodart/17133396/p17133396_v_v8_ac.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "The Hunt",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://movies.universalpictures.com/media/the-hunt-poster-5e42ebc495937-1.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Tenet",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://m.media-amazon.com/images/M/MV5BNmMwYzFlNTEtYTc0NC00NGY4LTgzNzItZGFiYTViY2QzNzU1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "The Photograph",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://dx35vtwkllhj9.cloudfront.net/universalstudios/the-photograph/images/regions/us/gallery/image10.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "The Gun",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://www.gstatic.com/tv/thumb/v22vodart/14325539/p14325539_v_v8_aa.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Batman",
+    "description" : "cevadescr",
+    "trailer" : "trailer",
+    "image" : "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  }
+]
