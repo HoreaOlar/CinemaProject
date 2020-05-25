@@ -1,1 +1,111 @@
-[]
+[ {
+  "title" : "StarWars",
+  "description" : "În timp ce Primul Ordin continuă să facă ravagii în Galaxie, Rey îşi încheie pregătirea ca Jedi. Totuşi, pericolul revine pe măsură ce maleficul împărat Palpatine se întoarce din morţi. În timp ce lucrează cu Finn şi Poe Dameron să îndeplinească o nouă misiune, Rey nu doar că îl va înfrunta din nou pe Kylo Ren, dar va descoperi şi adevărul despre părinţii ei, împreună cu un secret mortal care îi va influenţa viitorul şi soarta, ca şi confruntarea finală ce urmează să aibă loc. Acum, conflictul legendar între Jedi şi Sith ajunge la paroxism ducând la bun sfârşit saga Skywalker.",
+  "trailer" : "https://content.video.imedia.ro/storage/movie/b5/ee/1z/1jtxb5ee1z_mp4_720p_1575063168.mp4",
+  "image" : "https://images-na.ssl-images-amazon.com/images/I/81nXcPXv69L.jpg",
+  "price" : 10.1,
+  "sits" : 10,
+  "date" : [ ],
+  "comments" : [ ],
+  "winnings" : 0
+},
+  {
+    "title" : "White Chicks",
+    "description" : "În comedia extrem de amuzantă a Revolution Studios, Două pupeze albe, Shawn și Marlon Wayans interpretează rolul a doi agenți FBI ambițioși, dar ghinioniști, care acționează sub acoperire ca două tinere debutante în înalta societate, în stațiunea de lux Hamptons, pentru a investiga un grup de răpitori. În timp ce își fac intrarea cu pompă în cadrul evenimentului social al anului, cei doi află că este mult mai greu decât pare să pătrunzi în înalta societate.\n\nÎn ciuda eforturilor, agenții Marcus și Kevin Copeland (Marlon și Shawn Wayans) ajung pe cea mai joasă treaptă în ierharhia din cadrul FBI, dominată de o concurență acerbă. Cea mai recentă acțiune a lor a fost un eșec și slujbele atârnă de un fir de ață. Când se descoperă că se pune la cale un scenariul pentru răpirea a două răsfățate surori cu poziție socială înaltă, Brittany și Tiffany Wilson (Maitland Ward și Anne Dudek), cazul important este încredințat rivalilor lui Marcus și Kevin, agenții Vincent Gomez (Eddie Velez) și Jake Harper (Lochlyn Munro).\n",
+    "trailer" : "https://video.cinemagia.ro/f/1f6q5uoejd_mp4.mp4&format=mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/00/87/18/white-chicks-956356l-0x640-h-15c4ac82.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+      "title" : "Blestemul pământului Blestemul iubirii",
+    "description" : "Ion (Șerban Ionescu), un țăran sărac din satul Prislop, vrea să intre și el în rândul celor bogați. Planul său este de a-l sili pe Vasile Baciu (Petre Gheorghiu), unul dintre bogătașii satului, să i-o dea de soție pe fiica sa, Ana (Ioana Crăciunescu), și, o dată cu ea, și pământurile. Ana rămâne însărcinată, iar Ion așteaptă momentul tocmelii. În același timp, Ion e îndrăgostit pătimaș de Florica (Sorina Stănculescu), o fată frumoasă, dar săracă. Ion ar dori și zestrea Anei și iubirea Floricăi. Până la urmă, Ion se căsătorește cu Ana, care, disprețuită de toți, se va sinucide, iar Florica se căsătorește cu un fecior bogat, Gheorghe Buluc (Valentin Teodosiu), pe care însă nu-l iubește. Ion, încercând într-o noapte să se strecoare în patul ei, va cădea răpus de loviturile lui Gheorghe.",
+    "trailer" : "https://video.cinemagia.ro/f/1bzb5pov3s_mp4.mp4&format=mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/00/31/84/blestemul-pamantului-blestemul-iubirii-939186l-0x640-h-e00538c1.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Miami Bici",
+    "description" : "Maimi Bici este povestea lui Ion și Ilie, doi tineri dintr-un mic oraș obscur din România care merg la Miami în toiul iernii, pentru a trăi atât „Visul american” cât și visul românesc de a „îmbogăți rapid”. Odată ajunși acolo, ei se regăsesc în mijlocul planului machiavelc al lui Mișu, un român de cea mai joasă speță, stabilit în Florida.\n\nImplicându-se involuntar în afacerile dubioase ale lui Mișu, dar fiind în secret sfătuiți de Gelu, mentorul lor auto-proclamat, de acasă, cei doi se luptă pentru a supraviețui în America. În același timp, se dezvoltă o poveste de dragoste între Ion și Ioana, o fată de moravuri ușoare, dar cu inima curată, care le dă o mână de ajutor.",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/e1/gw/3x/1jzae1gw3x_mp4_720p_1579264801.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/26/20/865/miami-bici-689392l-0x640-h-3ce32389.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "The Invisible Man",
+    "description" : "Prinsă într-o relație violentă cu un om de știință genial și bogat, dar obsedat de control, Cecilia Kass (Moss) reușește să fugă în miezul nopții și să se ascundă cu ajutorul surorii sale (Harriet Dyer, din The InBetween), a prietenului lor din copilărie (Aldis Hodge, Straight Outta Compton) și a fiicei adolescente a acestuia (Storm Reid, Euphoria).\n\nDar când fostul său partener (Oliver Jackson-Cohen, din The Haunting of Hill House) se sinucide, și îi lasă o parte mare din uriașa lui avere, Cecilia începe să suspecteze că moartea lui nu e decât o farsă. Pe măsură ce începe să fie confruntată cu coincidențe din ce în ce mai sinistre, care pun în pericol viața celor dragi ei, Cecilia simte că sănătatea ei mentală e tot mai fragilă, din cauza eforturilor ei disperate de a le dovedi celorlalți că e hărțuită de o ființă care nu poate fi văzută.",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/f4/0r/2a/1jzuf40r2a_mp4_720p_1579700683.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/48/60/41/the-invisible-man-881366l-0x640-h-82686cb3.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "La La Land",
+    "description" : "Scris şi regizat de Damien Chazelle, „La La Land” urmăreşte povestea Miei (Emma Stone), o actriţă aspirantă şi a lui Sebastian (Ryan Gosling), un muzician îndrăgostit de jazz, care se zbat să atingă succesul într-un oraş în care prea multe vise şi inimi sunt frânte zi de zi. Plasat în Los Angeles-ul zilelor noastre, printre decoruri cuceritoare şi momente muzicale fascinante, filmul surprinde bucuriile, dar şi dezamăgirile cotidiene a doi tineri în încercarea lor de a-şi îndeplini visele.    \n\nDistribuit de Freeman Entertainment, „La La Land” aduce o poveste de dragoste emoţionantă cu ritm şi muzică, în premieră, din 23 decembrie în cinematografele din toată ţara.",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/yc/l7/5f/1gepycl75f_mp4_720p_1481646846.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/60/46/69/la-la-land-574990l-0x640-h-3675f4c8.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Joker",
+    "description" : "Filmul își concentrează acțiunea originală și nemaivăzută până acum pe marile ecrane în jurul unuia dintre cele mai controversate personaje negative din universul DC. Cu o viziune amplă și complexă, Phillips explorează traiectoria lui Arthur Fleck (Phoenix), un individ ignorat de societate, cu o personalitate imprevizibilă și fascinantă, care nu poate fi inclus în niciun stereotip. Ce se obține este un studiu de personaj disprețuit de societate care devine nu doar un sumbru caz social; ci și o poveste moralizatoare.\n\nRobert de Niro apare în rolul unei gazde de talk-show care îl face pe Joker să își piardă mințile. În King of Comedy, personajul lui De Niro, comediant ratat, răpea pe un moderator de succes, dar de data aceasta rolurile se vor inversa: De Niro va fi moderatorul plin de el.",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/sz/vv/9b/1jjnszvv9b_mp4_720p_1568708784.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/21/12/925/joker-612646l-0x640-h-4ede645d.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "The Photograph",
+    "description" : "No description \n Sorry, not sorry!",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/0m/04/gt/1jr40m04gt_mp4_720p_1572856851.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/27/02/925/the-photograph-980474l-0x640-h-5a5e38be.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Dolittle",
+    "description" : "După ce și-a pierdut soția în urmă cu șapte ani, excentricul dr. John Dolittle (Downey), un veterinar extrem de îndrăgit din Anglia victoriană, se izolează în spatele porților conacului său, singura companie fiindu-i o menajerie de animale exotice. Dar, când tânăra regină Victoria (Jessie Buckley) se îmbolnăvește grav, Dolittle pornește cu mari ezitări într-o călătorie plină de aventuri către o insulă mitică pentru a căuta leacul care o va vindeca pe regină, regăsindu-și pe drum curajul, și trezindu-și la viață istețimea legendară, pe măsură ce va fi nevoit să-și croiască drum printre creaturi nemaivăzute ochiului uman.\n\nÎn călătoria sa, doctorul va fi însoțit de un tânăr autoproclamat învățăcel (Harry Collett), dar și de o gorilă fricoasă (Remi Malek), o gâscă entuziastă, dar nu prea isteață (Octavia Spencer), un struț cinic (Kumail Nanjiani) și un urs polar exagerat de energic (John Cena), precum și de un papagal extrem de încăpățânat (Emma Thompson), care este confidentul și cel mai de încredere sfătuitor al lui Dolittle.",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/cg/wu/l2/1jtxcgwul2_mp4_720p_1575063453.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/19/17/997/dolittle-359594l-0x640-h-a62a8467.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  },
+  {
+    "title" : "Jumanji: The Next Level",
+    "description" : "Grupul celor patru tineri din filmul anterior revine - Spencer, Bethany, Fridge şi Martha. Ei sunt acum studenţi la colegiu şi se întorc la Brantford în vacanţă. Fiecare dintre ei trece prin această etapă a vieţii într-un mod diferit; Unii se străduiesc, iar alţii se adaptează mai greu vieţii de după jocul prin care au trecut, ieşind învingători.\n\nSpencer şi Martha au încercat o relaţie la distanţă, dar acum se află într-o pasă proastă pentru că Martha a adoptat un comportament sigur de sine pe care l-a dobândit în filmul anterior. Aceasta îl determină pe Spencer să o îndepărteze şi s-o evite, creând o distanţă emoţională între ei.",
+    "trailer" : "https://content.video.imedia.ro/storage/movie/ow/xp/y0/1jqpowxpy0_mp4_720p_1572545110.mp4",
+    "image" : "https://static.cinemagia.ro/img/resize/db/movie/23/64/427/jumanji-the-next-level-778031l-0x640-h-582a66cc.jpg",
+    "price" : 10.1,
+    "sits" : 10,
+    "date" : [ ],
+    "comments" : [ ],
+    "winnings" : 0
+  }
+]

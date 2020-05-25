@@ -28,14 +28,14 @@
               </content>
             </ScrollPane>
             <ImageView fx:id="movieImage" fitHeight="280.0" fitWidth="200.0" layoutX="219.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="10.0" />
-            <WebView fx:id="movieTrailer" layoutX="218.0" layoutY="329.0" prefHeight="550.0" prefWidth="946.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="310.0" />
+            <WebView fx:id="movieTrailer" layoutX="218.0" layoutY="329.0" minHeight="550.0" minWidth="946.0" prefHeight="550.0" prefWidth="946.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="310.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#565876" height="280.0" layoutX="440.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="735.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="10.0" />
             <Text fx:id="movieDescription" layoutX="423.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gs dgdgdjg sdgjsdjgjsdgjsdjgsdjg sdjgsdj sjdgjs dgjsd gsjdgjsdjgsdj gsdjg sdj gsdjgsd" wrappingWidth="726.1366786956787" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="10.0">
                <font>
-                  <Font size="21.0" />
+                  <Font size="14.0" />
                </font>
             </Text>
-            <Button fx:id="buyTicketButton" layoutX="210.0" layoutY="871.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="299.0" text="Buy Tickets" AnchorPane.topAnchor="870.0">
+            <Button fx:id="buyTicketButton" layoutX="210.0" layoutY="871.0" mnemonicParsing="false" onAction="#buyTicketAction" prefHeight="55.0" prefWidth="299.0" text="Buy Tickets" AnchorPane.topAnchor="870.0">
                <font>
                   <Font size="17.0" />
                </font>
@@ -44,16 +44,21 @@
                <font>
                   <Font size="15.0" />
                </font></TextField>
-            <Button fx:id="addReviewButton" layoutX="975.0" layoutY="960.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="182.0" text="Add" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="962.0">
+            <Button fx:id="addReviewButton" layoutX="975.0" layoutY="960.0" mnemonicParsing="false" onAction="#addReviewAction" prefHeight="57.0" prefWidth="182.0" text="Add" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="962.0">
                <font>
                   <Font size="27.0" />
                </font>
             </Button>
-            <Button fx:id="backButton" layoutX="38.0" layoutY="11.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Back" AnchorPane.leftAnchor="50.0">
+            <Button fx:id="backButton" layoutX="38.0" layoutY="11.0" mnemonicParsing="false" onAction="#toMoviesPageAction" prefHeight="50.0" prefWidth="100.0" text="Back" AnchorPane.leftAnchor="50.0">
                <font>
                   <Font size="26.0" />
                </font>
             </Button>
+            <Text fx:id="ticketPriceText" layoutX="534.0" layoutY="916.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0$/ticket">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
   </content>
 </ScrollPane>

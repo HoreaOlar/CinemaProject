@@ -2,7 +2,13 @@ package Controllers;
 
 import Services.MovieService;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.TilePane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 
 public class MoviesPageController {
@@ -17,5 +23,6 @@ public class MoviesPageController {
     public TilePane getTilePane() {
         return tilePane;
     }
+
 
 }
