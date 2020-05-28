@@ -1,13 +1,17 @@
 package Services;
 
 import Controllers.AdministratorPageController;
+import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
 import Model.Date;
 import Model.Movie;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
@@ -17,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 
 import java.io.IOException;
@@ -28,8 +33,10 @@ import java.util.List;
 public class MovieService {
 
     private  static MoviesPageController mpc;
+    private  static MovieDetailsPageController mdpc;
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
+    private static List<Button> movieButton=new ArrayList<>();
 
 
 
@@ -46,8 +53,11 @@ public class MovieService {
 
     public static void injectmp(MoviesPageController u) {
         mpc= u;
-
     }
+    public static void injectmdpc(MovieDetailsPageController u) {
+        mdpc= u;
+    }
+
     public static ImageView DesignImage(String url){
 
         Image image= new Image(url);
@@ -68,23 +78,53 @@ public class MovieService {
 
         return  imageView;
     }
-    public static Button setMovie(String url, String title){
+    public static Button setMovie(Movie movie){
 
-        ImageView imageView = DesignImage(url);
+        ImageView imageView = DesignImage(movie.getImage());
 
         Button button=new Button("",imageView);
         button.setPrefSize(285,390);
         button.setStyle("-fx-border-color: transparent;-fx-background-color: transparent; ");
-        button.setTooltip(new Tooltip(title));
+        button.setTooltip(new Tooltip(movie.getTitle()));
+        button.setOnAction(e -> {
+            try {
+                setMovieDetails(movie);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
         return button;
     }
 
-    public static void setMovies(){
+    private static void setMovieDetails(Movie movie) throws IOException {
+        MovieDetailsPageController.setMovie(movie);
 
+        Parent root = FXMLLoader.load(MovieService.class.getClassLoader().getResource("MovieDetailsPage.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Movies Details Page");
+        stage.setScene(new Scene(root, 1366,768));
+
+        stage.show();
+        Stage stage1 = (Stage) mpc.getTilePane().getScene().getWindow();
+        stage1.close();
+    }
+
+    public static void createMovieButtons(){
         for (Movie movie : movies) {
-            mpc.getTilePane().getChildren().add(setMovie(movie.getImage(),movie.getTitle()));
+            movieButton.add(setMovie(movie));
+
         }
     }
+
+    public static void setMoviesButtons(){
+
+        for (Button button : movieButton) {
+
+            mpc.getTilePane().getChildren().add(button);
+
+        }
+    }
+
 
 
 }
