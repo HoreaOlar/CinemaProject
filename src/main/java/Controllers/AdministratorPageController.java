@@ -16,12 +16,14 @@ public class AdministratorPageController {
     private TilePane tilePane;
     @FXML
     private Button button;
-    @FXML
+
     private void initialize(){
         MovieService.injectapc(this);
     }
 
+
     public void setAddingPage() throws IOException {
+
         Parent root;
         root = FXMLLoader.load(getClass().getClassLoader().getResource("AddingPage.fxml"));
         Stage stage=new Stage();
@@ -34,6 +36,8 @@ public class AdministratorPageController {
 
     public void handleAddButtonAction() throws IOException {
         setAddingPage();
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
     }
     public TilePane getTilePane() {
         return tilePane;

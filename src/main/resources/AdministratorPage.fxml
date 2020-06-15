@@ -15,7 +15,7 @@
             <content>
                 <TilePane fx:id="tilePane" prefHeight="668.0" prefWidth="1151.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);">
                     <children>
-                        <Button mnemonicParsing="false" opacity="0.91" prefHeight="370.0" prefWidth="260.0" onAction="#handleAddButtonAction" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="+">
+                        <Button mnemonicParsing="false" opacity="0.91" prefHeight="370.0" prefWidth="260.0" fx:id = "button" onAction="#handleAddButtonAction" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="+">
                             <TilePane.margin>
                                 <Insets left="10.0" top="10.0" />
                             </TilePane.margin>

@@ -98,4 +98,7 @@ public class MovieService {
         }
     }
 
+    public static void addMovie(Movie movie){
+        this.movies.add(movie);
+    }
 }
