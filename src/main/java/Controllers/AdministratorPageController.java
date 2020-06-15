@@ -16,7 +16,7 @@ public class AdministratorPageController {
     private TilePane tilePane;
     @FXML
     private Button button;
-
+    @FXML
     private void initialize(){
         MovieService.injectapc(this);
     }

@@ -99,6 +99,24 @@ public class MovieService {
     }
 
     public static void addMovie(Movie movie){
-        this.movies.add(movie);
+        movies.add(movie);
+        persistMovies();
+    }
+
+    public String toString(){
+        String string = new String("");
+       // for()
+        return string;
+    }
+
+    private static void persistMovies() {
+        try {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), movies);
+
+        } catch (IOException e) {
+            throw new CouldNotWriteUsersException();
+        }
     }
 }

@@ -60,16 +60,7 @@ public class AddingPageController {
         choiceBoxHour.setValue("10:00");
 
     }
-   /* private static void persistUsers() {
-        try {
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(MOVIES.toFile(), users);
-
-        } catch (IOException e) {
-            throw new CouldNotWriteUsersException();
-        }
-    } */
     public AddingPageController(){}
     public AddingPageController(TilePane tilePane) {
         this.tilePane = tilePane;
@@ -97,17 +88,25 @@ public class AddingPageController {
         System.out.println(data.toString());
     }
 
-    public void handleAddingButtonAction() throws IOException{
+    public void handleAddingButtonAction() throws IOException {
         //salvarea detaliilor filmului
         //crearea unui nou obiect film si adaugarea in json
         //am nevoie de un buton pentru adaugarea datei!
-        price1 = Double.valueOf(price.getText());
-        seats1 = Integer.valueOf(seats.getText());
-        movie =  new Movie(title.getText(),description.getText(),trailer.getText(),image.getText(),price1,seats1,date);
-        MovieService.addMovie(movie);
-        setAdministratorPage();
-        Stage stage = (Stage) addingButton.getScene().getWindow();
-        stage.close();
+        if (!(checkEmptyString(title.getText()) && checkEmptyString(description.getText()) && checkEmptyString(trailer.getText()) && checkEmptyString(image.getText()) && checkEmptyString(price.getText()) && checkEmptyString(seats.getText())))
+        {   price1 = Double.valueOf(price.getText());
+            seats1 = Integer.valueOf(seats.getText());
+            movie = new Movie(title.getText(), description.getText(), trailer.getText(), image.getText(), price1, seats1, date);
+            MovieService.addMovie(movie);
+            setAdministratorPage();
+            Stage stage = (Stage) addingButton.getScene().getWindow();
+            stage.close();
+        }
+    }
+
+    public boolean checkEmptyString(String string){
+        if(string == "")
+            return true;
+        return false;
     }
 
     public TilePane getTilePane() {

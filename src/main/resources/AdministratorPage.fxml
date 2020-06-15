@@ -13,7 +13,7 @@
     <children>
         <ScrollPane layoutX="1118.0" layoutY="119.0" prefHeight="649.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="1166.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="201.0">
             <content>
-                <TilePane fx:id="tilePane" prefHeight="668.0" prefWidth="1151.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);">
+                <TilePane fx:id="tilePane" prefHeight="668.0" prefWidth="1151.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);;">
                     <children>
                         <Button mnemonicParsing="false" opacity="0.91" prefHeight="370.0" prefWidth="260.0" fx:id = "button" onAction="#handleAddButtonAction" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="+">
                             <TilePane.margin>
