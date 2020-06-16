@@ -33,6 +33,7 @@ import java.util.List;
 public class MovieService {
 
     private  static MoviesPageController mpc;
+    private static AdministratorPageController apc;
     private  static MovieDetailsPageController mdpc;
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
@@ -56,6 +57,11 @@ public class MovieService {
     }
     public static void injectmdpc(MovieDetailsPageController u) {
         mdpc= u;
+    }
+
+
+    public static void injectapc(AdministratorPageController u) {
+        apc = u;
     }
 
     public static ImageView DesignImage(String url){
@@ -126,5 +132,32 @@ public class MovieService {
     }
 
 
+    public static void setMoviesAdmin(){
 
+        for (Movie movie : movies) {
+            apc.getTilePane().getChildren().add(setMovie(movie));
+        }
+    }
+
+    public static void addMovie(Movie movie){
+        movies.add(movie);
+        persistMovies();
+    }
+
+    public String toString(){
+        String string = new String("");
+       // for()
+        return string;
+    }
+
+    private static void persistMovies() {
+        try {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), movies);
+
+        } catch (IOException e) {
+            throw new CouldNotWriteUsersException();
+        }
+    }
 }

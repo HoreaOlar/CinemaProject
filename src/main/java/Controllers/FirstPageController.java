@@ -37,7 +37,8 @@ public class FirstPageController {
         Stage stage=new Stage();
         stage.setTitle("Movies Page");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
+        MovieService.loadMoviesFromFile();
         MovieService.setMoviesButtons();
 
         stage.show();
@@ -48,7 +49,11 @@ public class FirstPageController {
         Stage stage=new Stage();
         stage.setTitle("Administrator Page");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
+
+
+        MovieService.setMoviesAdmin();
+
         stage.show();
     }
 

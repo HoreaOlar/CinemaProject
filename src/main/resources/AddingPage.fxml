@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddingPageController">
+
+   <children>
+      <Text fill="WHITE" layoutX="488.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Movie" wrappingWidth="363.96044921875">
+         <font>
+            <Font size="53.0" />
+         </font>
+      </Text>
+      <TextField fx:id="title" layoutX="224.0" layoutY="113.0" />
+      <Text fill="WHITE" layoutX="224.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="223.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="description" layoutX="224.0" layoutY="192.0" prefHeight="52.0" prefWidth="364.0" />
+      <Text fill="WHITE" layoutX="222.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAILER URL:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="trailer" layoutX="224.0" layoutY="293.0" />
+      <Text fill="WHITE" layoutX="224.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMAGE:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="image" layoutX="224.0" layoutY="362.0" />
+      <TextField fx:id="price" layoutX="224.0" layoutY="435.0" />
+      <TextField fx:id="seats" layoutX="224.0" layoutY="509.0" />
+      <Text fill="WHITE" layoutX="227.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRICE:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="224.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEATS:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="addingButton" layoutX="852.0" layoutY="603.0" mnemonicParsing="false" onAction="#handleAddingButtonAction" prefHeight="43.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF;" text="ADD MOVIE" />
+      <Text fill="WHITE" layoutX="223.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATES:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="choiceBoxDay" layoutX="223.0" layoutY="577.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceBoxHour" layoutX="222.0" layoutY="625.0" prefWidth="150.0" />
+      <Button fx:id="addingDate" layoutX="283.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleAddingDateAction" text="ADD DATE" />
+      <Text fx:id="textEroare" fill="WHITE" layoutX="844.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="184.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

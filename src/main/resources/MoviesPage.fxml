@@ -82,7 +82,7 @@
       </Button>
       <Text fill="#f2eded" layoutX="-6.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CINEMA   CINEMA   CINEMA" textAlignment="CENTER" wrappingWidth="1367.25390625">
          <font>
-            <Font name="System Bold" size="96.0" />
+            <Font name="System Bold" size="80.0" />
          </font>
       </Text>
    </children>
