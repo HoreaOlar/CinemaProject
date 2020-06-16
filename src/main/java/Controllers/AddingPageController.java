@@ -1,5 +1,6 @@
 package Controllers;
 
+import Exceptions.EmptyFieldException;
 import Model.Date;
 import Model.Movie;
 import Services.MovieService;
@@ -13,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.TilePane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,6 +54,9 @@ public class AddingPageController {
     private List<Date> date = new ArrayList<>();
 
     @FXML
+    private Text textEroare;
+
+    @FXML
     public  void initialize(){
 
         choiceBoxDay.getItems().addAll("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
@@ -88,25 +93,41 @@ public class AddingPageController {
         System.out.println(data.toString());
     }
 
-    public void handleAddingButtonAction() throws IOException {
+    public void handleAddingButtonAction() throws IOException, EmptyFieldException {
         //salvarea detaliilor filmului
         //crearea unui nou obiect film si adaugarea in json
         //am nevoie de un buton pentru adaugarea datei!
-        if (!(checkEmptyString(title.getText()) && checkEmptyString(description.getText()) && checkEmptyString(trailer.getText()) && checkEmptyString(image.getText()) && checkEmptyString(price.getText()) && checkEmptyString(seats.getText())))
-        {   price1 = Double.valueOf(price.getText());
-            seats1 = Integer.valueOf(seats.getText());
-            movie = new Movie(title.getText(), description.getText(), trailer.getText(), image.getText(), price1, seats1, date);
+
+         try{
+             if(!price.getText().equals(""))
+                price1 = Double.valueOf(price.getText());
+             else
+                 throw new EmptyFieldException();
+             if(!seats.getText().equals(""))
+                seats1 = Integer.valueOf(seats.getText());
+             else
+                 throw new EmptyFieldException();
+            movie = new Movie(CE(title.getText()), CE(description.getText()), CE(trailer.getText()), CE(image.getText()), CE(price1), (seats1), date);
             MovieService.addMovie(movie);
             setAdministratorPage();
             Stage stage = (Stage) addingButton.getScene().getWindow();
             stage.close();
+        }catch(EmptyFieldException e){
+            textEroare.setText("Empty fields!");
         }
     }
 
-    public boolean checkEmptyString(String string){
-        if(string == "")
-            return true;
-        return false;
+    public String CE(String string) throws EmptyFieldException{ // Verifica daca exista campuri necompletate in formular
+        if(string.equals(""))
+            throw new EmptyFieldException();
+        else
+            return string;
+    }
+    public double CE(double d) throws EmptyFieldException{
+        if(d==0)
+            throw new EmptyFieldException();
+        else
+            return d;
     }
 
     public TilePane getTilePane() {

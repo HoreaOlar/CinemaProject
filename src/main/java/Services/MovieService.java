@@ -1,6 +1,7 @@
 package Services;
 
 import Controllers.AdministratorPageController;
+import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
 import Model.Date;
@@ -32,6 +33,7 @@ import java.util.List;
 public class MovieService {
 
     private  static MoviesPageController mpc;
+    private static AdministratorPageController apc;
     private  static MovieDetailsPageController mdpc;
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
@@ -57,7 +59,7 @@ public class MovieService {
         mdpc= u;
     }
 
-    }
+
     public static void injectapc(AdministratorPageController u) {
         apc = u;
     }
@@ -133,7 +135,7 @@ public class MovieService {
     public static void setMoviesAdmin(){
 
         for (Movie movie : movies) {
-            apc.getTilePane().getChildren().add(setMovie(movie.getImage(),movie.getTitle()));
+            apc.getTilePane().getChildren().add(setMovie(movie));
         }
     }
 

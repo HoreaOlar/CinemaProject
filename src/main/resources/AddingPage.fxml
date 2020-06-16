@@ -60,5 +60,10 @@
       <ChoiceBox fx:id="choiceBoxDay" layoutX="223.0" layoutY="577.0" prefWidth="150.0" />
       <ChoiceBox fx:id="choiceBoxHour" layoutX="222.0" layoutY="625.0" prefWidth="150.0" />
       <Button fx:id="addingDate" layoutX="283.0" layoutY="670.0" mnemonicParsing="false" onAction="#handleAddingDateAction" text="ADD DATE" />
+      <Text fx:id="textEroare" fill="WHITE" layoutX="844.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="184.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

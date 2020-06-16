@@ -39,7 +39,7 @@ public class FirstPageController {
         stage.setScene(new Scene(root, 1366,768));
         stage.setFullScreen(false);
         MovieService.loadMoviesFromFile();
-        MovieService.setMovies();
+        MovieService.setMoviesButtons();
 
         stage.show();
     }
