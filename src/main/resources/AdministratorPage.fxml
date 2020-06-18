@@ -15,7 +15,7 @@
             <content>
                 <TilePane fx:id="tilePane" prefHeight="668.0" prefWidth="1151.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);;">
                     <children>
-                        <Button mnemonicParsing="false" opacity="0.91" prefHeight="370.0" prefWidth="260.0" fx:id = "button" onAction="#handleAddButtonAction" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="+">
+                        <Button fx:id="button" mnemonicParsing="false" onAction="#handleAddButtonAction" opacity="0.91" prefHeight="370.0" prefWidth="260.0" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="+">
                             <TilePane.margin>
                                 <Insets left="10.0" top="10.0" />
                             </TilePane.margin>
@@ -91,11 +91,18 @@
                 <Font size="21.0" />
             </font>
         </Button>
-        <Text fill="#f2eded" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CINEMA    CINEMA   CINEMA" textAlignment="CENTER" wrappingWidth="1367.25390625" AnchorPane.bottomAnchor="539.609375" AnchorPane.leftAnchor="-0.74609375" AnchorPane.topAnchor="4.890625">
+        <Text fill="#f2eded" layoutX="0.25390625" layoutY="80.07666015625" strokeType="OUTSIDE" strokeWidth="0.0" text="   CINEMA  CINEMA   CINEMA" textAlignment="CENTER" wrappingWidth="1367.25390625" AnchorPane.bottomAnchor="668.8203125" AnchorPane.leftAnchor="0.25390625" AnchorPane.topAnchor="4.890625">
             <font>
                 <Font name="System Bold" size="81.0" />
             </font>
         </Text>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" fx:id="logOffButton" onAction="#handleLogOffButtonAction" mnemonicParsing="false" prefHeight="78.0" prefWidth="93.0" text="LOG OFF">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
     </children>
 </AnchorPane>

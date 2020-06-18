@@ -17,6 +17,8 @@ public class AdministratorPageController {
     @FXML
     private Button button;
     @FXML
+    private Button logOffButton;
+    @FXML
     private void initialize(){
         MovieService.injectapc(this);
     }
@@ -32,6 +34,22 @@ public class AdministratorPageController {
         stage.setFullScreen(false);
 
         stage.show();
+    }
+
+    public void setFirstPage() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("FirstPage.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Cinema Application");
+        stage.setScene(new Scene(root, 1366,768));
+        stage.setFullScreen(false);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public void handleLogOffButtonAction() throws IOException{
+        setFirstPage();
+        Stage stage = (Stage) logOffButton.getScene().getWindow();
+        stage.close();
     }
 
     public void handleAddButtonAction() throws IOException {

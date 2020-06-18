@@ -80,10 +80,15 @@
             <Font size="21.0" />
          </font>
       </Button>
-      <Text fill="#f2eded" layoutX="-6.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CINEMA   CINEMA   CINEMA" textAlignment="CENTER" wrappingWidth="1367.25390625">
+      <Text fill="#f2eded" layoutX="-6.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    CINEMA  CINEMA  CINEMA" textAlignment="CENTER" wrappingWidth="1367.25390625">
          <font>
             <Font name="System Bold" size="80.0" />
          </font>
       </Text>
+      <Button layoutX="22.0" layoutY="23.0" fx:id="lofOffButton" onAction="#handleLogOffButton" mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="LOG OFF">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

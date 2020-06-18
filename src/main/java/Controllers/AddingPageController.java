@@ -89,8 +89,12 @@ public class AddingPageController {
     public void handleAddingDateAction() throws IOException{
         //salvarea datelor intr-o lista de date, care va fi ulterior adaugata intr-un obiect film
         data = new Date(choiceBoxDay.getValue(),choiceBoxHour.getValue());
+        if(seats.getText().equals(""))
+            seats1=0;
+        else
+            seats1= Integer.valueOf(seats.getText());
+        data.setAvaliableSits(seats1);
         date.add(data);
-        System.out.println(data.toString());
     }
 
     public void handleAddingButtonAction() throws IOException, EmptyFieldException {
@@ -103,11 +107,7 @@ public class AddingPageController {
                 price1 = Double.valueOf(price.getText());
              else
                  throw new EmptyFieldException();
-             if(!seats.getText().equals(""))
-                seats1 = Integer.valueOf(seats.getText());
-             else
-                 throw new EmptyFieldException();
-            movie = new Movie(CE(title.getText()), CE(description.getText()), CE(trailer.getText()), CE(image.getText()), CE(price1), (seats1), date);
+            movie = new Movie(CE(title.getText()), CE(description.getText()), CE(trailer.getText()), CE(image.getText()), CE(price1), date);
             MovieService.addMovie(movie);
             setAdministratorPage();
             Stage stage = (Stage) addingButton.getScene().getWindow();

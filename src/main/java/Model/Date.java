@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Date {
     private String day;
     private String hour;
-    private int avaliableSits;
+    private int availableSits;
     private int occupiedSits;
 
     public Date() {
@@ -47,11 +47,11 @@ public class Date {
     }
 
     public int getAvaliableSits() {
-        return avaliableSits;
+        return availableSits;
     }
 
-    public void setAvaliableSits(int avaliableSits) {
-        this.avaliableSits = avaliableSits;
+    public void setAvaliableSits(int availableSits) {
+        this.availableSits = availableSits;
     }
 
     public int getOccupiedSits() {

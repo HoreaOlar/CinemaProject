@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
@@ -14,10 +15,28 @@ import java.io.IOException;
 public class MoviesPageController {
     @FXML
     private TilePane tilePane;
+    @FXML
+    private Button lofOffButton;
 
     @FXML
     private void initialize(){
         MovieService.injectmp(this);
+    }
+
+    public void setFirstPage() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("FirstPage.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Cinema Application");
+        stage.setScene(new Scene(root, 1366,768));
+        stage.setFullScreen(false);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public void handleLogOffButton() throws IOException{
+        setFirstPage();
+        Stage stage = (Stage) lofOffButton.getScene().getWindow();
+        stage.close();
     }
 
     public TilePane getTilePane() {
