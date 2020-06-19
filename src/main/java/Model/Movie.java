@@ -76,6 +76,10 @@ public class Movie {
         this.date = date;
     }
 
+    public void addDate(Date date){
+        this.date.add(date);
+    }
+
     public List<String> getComments() {
         return comments;
     }
