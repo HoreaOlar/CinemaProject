@@ -61,6 +61,9 @@ public class MovieDetailsAdminPageController {
     @FXML
     private ScrollPane scroll2;
 
+    @FXML
+    private Button deleteButton;
+
     private static Movie movie;
 
     @FXML
@@ -82,7 +85,7 @@ public class MovieDetailsAdminPageController {
     }
 
     @FXML
-    void toAdministratorPage(ActionEvent event) throws IOException {
+    public void toAdministratorPage(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdministratorPage.fxml"));
         Stage stage=new Stage();
@@ -98,6 +101,27 @@ public class MovieDetailsAdminPageController {
     public static void setMovie(Movie mov) {
         movie = mov;
     }
+
+    public void setAdministratorPage() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdministratorPage.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Administrator Page");
+        stage.setScene(new Scene(root, 1366,768));
+        stage.setFullScreen(false);
+
+        MovieService.loadMoviesFromFile();
+        MovieService.setMoviesAdmin();
+
+        stage.show();
+    }
+
+    public void handleDeleteButtonAction() throws IOException{
+        MovieService.deleteMovie(movie);
+        setAdministratorPage();
+        Stage stage= (Stage) deleteButton.getScene().getWindow();
+        stage.close();
+    }
+
 
     public TilePane getTilePaneReview() {
         return tilePaneReview;

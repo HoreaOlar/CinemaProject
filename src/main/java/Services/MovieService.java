@@ -168,6 +168,11 @@ public class MovieService {
         persistMovies();
     }
 
+    public static void deleteMovie(Movie movie){
+        movies.remove(movie);
+        persistMovies();
+    }
+
     public String toString(){
         String string = new String("");
        // for()
