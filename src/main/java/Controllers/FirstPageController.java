@@ -81,7 +81,10 @@ public class FirstPageController {
             if(Objects.equals(usernameField.getText(),"admin"))
                 setAdministratorPage();
             else
-            setMoviesPage();
+            {
+                MovieService.setActiveUser(usernameField.getText());
+                setMoviesPage();
+            }
         } catch (Exception e) {
             text.setText(e.getMessage());
         }

@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -38,7 +39,7 @@ public class MovieService {
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
     private static List<Button> movieButton=new ArrayList<>();
-
+    private static String activUser;
 
 
     public static void loadMoviesFromFile() throws IOException {
@@ -159,5 +160,40 @@ public class MovieService {
         } catch (IOException e) {
             throw new CouldNotWriteUsersException();
         }
+
     }
+
+
+    //thissssssss
+
+
+    private static void setReview(String review) {
+        TextArea textArea= new TextArea(review);
+        textArea.setPrefWidth(752);
+        textArea.setPrefHeight(200);
+        textArea.setWrapText(true);
+        textArea.setEditable(false);
+
+        mdpc.getTilePaneReview().getChildren().add(textArea);
+    }
+
+    public static void setReviews(Movie movie) {
+        for(String review: movie.getComments())
+            setReview(review);
+    }
+
+    public static void addReviews(String title,String review) throws IOException {
+
+        for (Movie movie: movies)
+            if(movie.getTitle().equals(title))
+                movie.getComments().add(activUser+"\n"+review);
+
+        persistMovies();
+
+    }
+
+    public static void setActiveUser(String text) {
+        activUser=text;
+    }
+    //thissssssss
 }
