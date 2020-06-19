@@ -1,9 +1,13 @@
 package Services;
 
 import Controllers.AdministratorPageController;
+import Controllers.BuyTicketFormController;
 import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
+import Exceptions.EmptyFieldException;
+import Exceptions.ExceededSitsException;
+import Exceptions.WrongCardNumberException;
 import Model.Date;
 import Model.Movie;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -15,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -30,16 +35,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MovieService {
 
     private  static MoviesPageController mpc;
     private static AdministratorPageController apc;
     private  static MovieDetailsPageController mdpc;
+    private static  BuyTicketFormController btfc;
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
     private static List<Button> movieButton=new ArrayList<>();
     private static String activUser;
+    private static Movie activMovie;
+
 
 
     public static void loadMoviesFromFile() throws IOException {
@@ -59,11 +68,10 @@ public class MovieService {
     public static void injectmdpc(MovieDetailsPageController u) {
         mdpc= u;
     }
-
-
     public static void injectapc(AdministratorPageController u) {
         apc = u;
     }
+    public static void injecbtfc(BuyTicketFormController u) { btfc=u;}
 
     public static ImageView DesignImage(String url){
 
@@ -105,6 +113,8 @@ public class MovieService {
 
     private static void setMovieDetails(Movie movie) throws IOException {
         MovieDetailsPageController.setMovie(movie);
+        BuyTicketFormController.setMovie(movie);
+        activMovie=movie;
 
         Parent root = FXMLLoader.load(MovieService.class.getClassLoader().getResource("MovieDetailsPage.fxml"));
         Stage stage=new Stage();
@@ -145,13 +155,20 @@ public class MovieService {
         persistMovies();
     }
 
+    public static void checkBuy(String ticketsField, int avaliableSits, String cardNumberField) throws Exception{
+        if(ticketsField.equals("")) throw new EmptyFieldException();
+        if(Integer.parseInt(ticketsField)>avaliableSits) throw new ExceededSitsException();
+        if(cardNumberField.length()!=16) throw new WrongCardNumberException();
+    }
+
+
     public String toString(){
         String string = new String("");
        // for()
         return string;
     }
 
-    private static void persistMovies() {
+    public static void persistMovies() {
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -164,7 +181,7 @@ public class MovieService {
     }
 
 
-    //thissssssss
+
 
 
     private static void setReview(String review) {
@@ -195,5 +212,17 @@ public class MovieService {
     public static void setActiveUser(String text) {
         activUser=text;
     }
-    //thissssssss
+
+    public static void setSits(Date date){
+        for (Date datem: movies.get(movies.indexOf(activMovie)).getDate())
+            if(Objects.equals(datem.getHour(),date.getHour()) && Objects.equals(datem.getDay(),date.getDay()))
+            {
+                datem.setAvaliableSits(date.getAvaliableSits());
+                datem.setOccupiedSits(date.getOccupiedSits());
+            }
+
+        persistMovies();
+
+    }
+
 }
