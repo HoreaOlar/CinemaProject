@@ -1,7 +1,6 @@
 package Services;
 
 import Controllers.AdministratorPageController;
-import Controllers.ModifyingMovieDetailsController;
 import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
@@ -15,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -39,7 +39,7 @@ public class MovieService {
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
     private static List<Button> movieButton=new ArrayList<>();
-    private static int ok;
+    private static String activUser;
 
 
     public static void loadMoviesFromFile() throws IOException {
@@ -55,7 +55,6 @@ public class MovieService {
 
     public static void injectmp(MoviesPageController u) {
         mpc= u;
-        ok=1;
     }
     public static void injectmdpc(MovieDetailsPageController u) {
         mdpc= u;
@@ -64,7 +63,6 @@ public class MovieService {
 
     public static void injectapc(AdministratorPageController u) {
         apc = u;
-        ok=2;
     }
 
     public static ImageView DesignImage(String url){
@@ -97,10 +95,7 @@ public class MovieService {
         button.setTooltip(new Tooltip(movie.getTitle()));
         button.setOnAction(e -> {
             try {
-                if(ok==1)
-                    setMovieDetails(movie);
-                else
-                    modifyMovieDetails(movie);
+                setMovieDetails(movie);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -137,6 +132,7 @@ public class MovieService {
         }
     }
 
+
     public static void setMoviesAdmin(){
 
         for (Movie movie : movies) {
@@ -149,6 +145,12 @@ public class MovieService {
         persistMovies();
     }
 
+    public String toString(){
+        String string = new String("");
+       // for()
+        return string;
+    }
+
     private static void persistMovies() {
         try {
 
@@ -158,19 +160,40 @@ public class MovieService {
         } catch (IOException e) {
             throw new CouldNotWriteUsersException();
         }
+
     }
 
 
-    private static void modifyMovieDetails(Movie movie) throws IOException {
-        ModifyingMovieDetailsController.setMovie(movie);
+    //thissssssss
 
-        Parent root = FXMLLoader.load(MovieService.class.getClassLoader().getResource("ModifyingMovieDetails.fxml"));
-        Stage stage=new Stage();
-        stage.setTitle("Modifying Movies Details Page");
-        stage.setScene(new Scene(root, 1366,768));
 
-        stage.show();
-        Stage stage1 = (Stage) apc.getTilePane().getScene().getWindow();
-        stage1.close();
+    private static void setReview(String review) {
+        TextArea textArea= new TextArea(review);
+        textArea.setPrefWidth(752);
+        textArea.setPrefHeight(200);
+        textArea.setWrapText(true);
+        textArea.setEditable(false);
+
+        mdpc.getTilePaneReview().getChildren().add(textArea);
     }
+
+    public static void setReviews(Movie movie) {
+        for(String review: movie.getComments())
+            setReview(review);
+    }
+
+    public static void addReviews(String title,String review) throws IOException {
+
+        for (Movie movie: movies)
+            if(movie.getTitle().equals(title))
+                movie.getComments().add(activUser+"\n"+review);
+
+        persistMovies();
+
+    }
+
+    public static void setActiveUser(String text) {
+        activUser=text;
+    }
+    //thissssssss
 }

@@ -16,7 +16,6 @@ public class Main extends Application {
 
         UserService.loadUsersFromFile();
         MovieService.loadMoviesFromFile();
-        MovieService.loadMoviesFromFile();
         MovieService.createMovieButtons();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("FirstPage.fxml"));
