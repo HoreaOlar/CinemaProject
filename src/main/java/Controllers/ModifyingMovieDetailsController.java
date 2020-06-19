@@ -60,8 +60,10 @@ public class ModifyingMovieDetailsController {
 
     }
 
-    public void handleDeleteButtonAction() throws IOException{
-
+    public void handleDeleteButtonAction() throws IOException {
+        if (!(choiceBoxDay.getValue().equals("") && choiceBoxHour.getValue().equals(""))) {
+            movie.deleteDate(choiceBoxDay.getValue(),choiceBoxHour.getValue());
+            MovieService.persistMovies();
+        }
     }
-
 }

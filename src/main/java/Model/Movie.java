@@ -11,6 +11,7 @@ public class Movie {
     private String image;
     private  double price;
     private List<Date> date;
+    private Date dateAux;
     private List<String> comments=new ArrayList<>();
     private int winnings;
 
@@ -78,6 +79,13 @@ public class Movie {
 
     public void addDate(Date date){
         this.date.add(date);
+    }
+
+    public void deleteDate(String day, String hour){
+        for(Date i : date)
+            if((hour.equals(i.getHour())) && (day.equals(i.getDay())))
+                dateAux=i;
+         this.date.remove(dateAux);
     }
 
     public List<String> getComments() {
