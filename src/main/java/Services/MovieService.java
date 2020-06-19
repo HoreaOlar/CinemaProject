@@ -31,16 +31,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MovieService {
 
     private  static MoviesPageController mpc;
     private static AdministratorPageController apc;
     private  static MovieDetailsPageController mdpc;
+    private static  BuyTicketFormController btfc;
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
     private static List<Button> movieButton=new ArrayList<>();
     private static String activUser;
+    private static Movie activMovie;
+
 
 
     public static void loadMoviesFromFile() throws IOException {
@@ -60,11 +64,10 @@ public class MovieService {
     public static void injectmdpc(MovieDetailsPageController u) {
         mdpc= u;
     }
-
-
     public static void injectapc(AdministratorPageController u) {
         apc = u;
     }
+    public static void injecbtfc(BuyTicketFormController u) { btfc=u;}
 
     public static ImageView DesignImage(String url){
 
@@ -107,6 +110,7 @@ public class MovieService {
     private static void setMovieDetails(Movie movie) throws IOException {
         MovieDetailsPageController.setMovie(movie);
         BuyTicketFormController.setMovie(movie);
+        activMovie=movie;
 
         Parent root = FXMLLoader.load(MovieService.class.getClassLoader().getResource("MovieDetailsPage.fxml"));
         Stage stage=new Stage();
@@ -147,6 +151,9 @@ public class MovieService {
         persistMovies();
     }
 
+
+
+
     public String toString(){
         String string = new String("");
        // for()
@@ -166,7 +173,7 @@ public class MovieService {
     }
 
 
-    //thissssssss
+
 
 
     private static void setReview(String review) {
@@ -197,5 +204,5 @@ public class MovieService {
     public static void setActiveUser(String text) {
         activUser=text;
     }
-    //thissssssss
+
 }
