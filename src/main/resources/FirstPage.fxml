@@ -21,7 +21,7 @@
             <Image url="@../../../../login/src/Image/114809.1431164889.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layout  X="4.0" layoutY="321.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="200.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="4.0" layoutY="321.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="200.0">
          <image>
             <Image url="@Images/gf1.gif" />
          </image>

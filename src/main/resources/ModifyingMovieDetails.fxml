@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifyingMovieDetailsController">
+
+    <children>
+        <Text fill="WHITE" layoutX="366.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Movie Details" wrappingWidth="613.96044921875">
+            <font>
+                <Font size="53.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

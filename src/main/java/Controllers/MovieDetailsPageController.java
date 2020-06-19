@@ -83,7 +83,6 @@ public class MovieDetailsPageController {
         stage1.close();
     }
 
-
     public static void setMovie(Movie mov) {
         movie = mov;
     }
