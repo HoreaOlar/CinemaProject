@@ -1,6 +1,7 @@
 package Services;
 
 import Controllers.AdministratorPageController;
+import Controllers.MovieDetailsAdminPageController;
 import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
@@ -36,11 +37,12 @@ public class MovieService {
     private  static MoviesPageController mpc;
     private static AdministratorPageController apc;
     private  static MovieDetailsPageController mdpc;
+    private static MovieDetailsAdminPageController amdpc;
     private static List<Movie> movies=new ArrayList<>();
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "movies.json");
     private static List<Button> movieButton=new ArrayList<>();
     private static String activUser;
-
+    private static int which;
 
     public static void loadMoviesFromFile() throws IOException {
 
@@ -55,14 +57,19 @@ public class MovieService {
 
     public static void injectmp(MoviesPageController u) {
         mpc= u;
+        which=1;
     }
     public static void injectmdpc(MovieDetailsPageController u) {
         mdpc= u;
     }
 
+    public static void injectamdpc(MovieDetailsAdminPageController u){
+        amdpc=u;
+    }
 
     public static void injectapc(AdministratorPageController u) {
         apc = u;
+        which=2;
     }
 
     public static ImageView DesignImage(String url){
@@ -95,7 +102,10 @@ public class MovieService {
         button.setTooltip(new Tooltip(movie.getTitle()));
         button.setOnAction(e -> {
             try {
-                setMovieDetails(movie);
+                if(which==1)
+                    setMovieDetails(movie);
+                else if(which ==2)
+                    setMovieDetailsAdmin(movie);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -113,6 +123,19 @@ public class MovieService {
 
         stage.show();
         Stage stage1 = (Stage) mpc.getTilePane().getScene().getWindow();
+        stage1.close();
+    }
+
+    private static void setMovieDetailsAdmin(Movie movie) throws IOException {
+        MovieDetailsAdminPageController.setMovie(movie);
+
+        Parent root = FXMLLoader.load(MovieService.class.getClassLoader().getResource("MovieDetailsAdminPage.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Movies Details Page");
+        stage.setScene(new Scene(root, 1366,768));
+
+        stage.show();
+        Stage stage1 = (Stage) apc.getTilePane().getScene().getWindow();
         stage1.close();
     }
 
@@ -196,4 +219,5 @@ public class MovieService {
         activUser=text;
     }
     //thissssssss
+
 }
