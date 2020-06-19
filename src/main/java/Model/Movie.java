@@ -1,5 +1,7 @@
 package Model;
 
+import Services.MovieService;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -13,7 +15,7 @@ public class Movie {
     private List<Date> date;
     private Date dateAux;
     private List<String> comments=new ArrayList<>();
-    private int winnings;
+    private double winnings;
 
     public Movie(){
     }
@@ -25,6 +27,7 @@ public class Movie {
         this.image = image;
         this.price = price;
         this.date = date;
+        this.winnings=0;
     }
 
 
@@ -88,6 +91,10 @@ public class Movie {
          this.date.remove(dateAux);
     }
 
+    public void increaseWinnings(int nr){
+       winnings= winnings + nr*price;
+    }
+
     public List<String> getComments() {
         return comments;
     }
@@ -96,7 +103,8 @@ public class Movie {
         this.comments = comments;
     }
 
-    public int getWinnings() {
+    public double getWinnings() {
+
         return winnings;
     }
 

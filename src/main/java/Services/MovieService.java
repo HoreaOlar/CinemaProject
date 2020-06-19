@@ -258,4 +258,13 @@ public class MovieService {
 
     }
 
+    public static void setWinnings(String title, int nr){
+        for(Movie i: movies)
+            if(i.getTitle().equals(title))
+                i.increaseWinnings(nr);
+
+        persistMovies();
+
+    }
+
 }
