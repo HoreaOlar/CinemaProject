@@ -37,6 +37,6 @@
       <Button layoutX="215.0" layoutY="234.0" mnemonicParsing="false" onAction="#buyTicketOnAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #ff6600; -fx-background-radius: 5;" text="Buy" textFill="WHITE" />
       <ChoiceBox fx:id="dayChoiceBox" layoutX="358.0" layoutY="261.0" prefWidth="150.0" />
       <ChoiceBox fx:id="hourChoiceBox" layoutX="358.0" layoutY="296.0" prefWidth="150.0" />
-      <Text fx:id="errorText" layoutX="358.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="150.0" />
+      <Text fx:id="errorText" layoutX="358.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="150.0" />
    </children>
 </AnchorPane>

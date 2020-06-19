@@ -5,6 +5,9 @@ import Controllers.BuyTicketFormController;
 import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
+import Exceptions.EmptyFieldException;
+import Exceptions.ExceededSitsException;
+import Exceptions.WrongCardNumberException;
 import Model.Date;
 import Model.Movie;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -16,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -151,7 +155,11 @@ public class MovieService {
         persistMovies();
     }
 
-
+    public static void checkBuy(String ticketsField, int avaliableSits, String cardNumberField) throws Exception{
+        if(ticketsField.equals("")) throw new EmptyFieldException();
+        if(Integer.parseInt(ticketsField)>avaliableSits) throw new ExceededSitsException();
+        if(cardNumberField.length()!=16) throw new WrongCardNumberException();
+    }
 
 
     public String toString(){
@@ -160,7 +168,7 @@ public class MovieService {
         return string;
     }
 
-    private static void persistMovies() {
+    public static void persistMovies() {
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -203,6 +211,18 @@ public class MovieService {
 
     public static void setActiveUser(String text) {
         activUser=text;
+    }
+
+    public static void setSits(Date date){
+        for (Date datem: movies.get(movies.indexOf(activMovie)).getDate())
+            if(Objects.equals(datem.getHour(),date.getHour()) && Objects.equals(datem.getDay(),date.getDay()))
+            {
+                datem.setAvaliableSits(date.getAvaliableSits());
+                datem.setOccupiedSits(date.getOccupiedSits());
+            }
+
+        persistMovies();
+
     }
 
 }

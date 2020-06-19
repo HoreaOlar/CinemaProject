@@ -39,36 +39,55 @@ public class BuyTicketFormController {
 
     private static Movie activmovie;
     private Date chosenDate;
+    private int swh=0;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
 
-        Image image=new Image(activmovie.getImage(),160,200,false,false);
+        Image image = new Image(activmovie.getImage(), 160, 200, false, false);
         movieImage.setImage(image);
         setDayChoiceBox();
         dayChoiceBox.getSelectionModel()
                 .selectedItemProperty()
-                .addListener( (ObservableValue<? extends String> observable, String oldValue, String newValue) ->
+                .addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) ->
                 {
                     hourChoiceBox.getItems().clear();
                     setHour(newValue);
-                    // setChosenTrainer(UserService.setByTrainer(newValue));
-
                 });
 
         hourChoiceBox.getSelectionModel()
                 .selectedItemProperty()
-                .addListener( (ObservableValue<? extends String> observable, String oldValue, String newValue) ->
+                .addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) ->
                 {
-                    findDate(dayChoiceBox.getValue(),newValue);
+                    chosenDate=findDate(dayChoiceBox.getValue(), newValue);
+                    swh=1;
                 });
 
     }
 
     @FXML
     void buyTicketOnAction(ActionEvent event) {
+        errorText.setText("");
+        if(swh==0)
+            errorText.setText("Plese chose the date");
+        else
+        try {
+            System.out.println(ticketsField.getText());
+            System.out.println(chosenDate.getAvaliableSits());
+            MovieService.checkBuy(ticketsField.getText(), chosenDate.getAvaliableSits(), cardNumberField.getText());
 
+            chosenDate.setOccupiedSits(chosenDate.getOccupiedSits()+Integer.parseInt(ticketsField.getText()));
+            chosenDate.setAvaliableSits(chosenDate.getAvaliableSits()-Integer.parseInt(ticketsField.getText()));
+
+            MovieService.setSits(chosenDate);
+
+            errorText.setText("Thank you for buying");
+        } catch (Exception e) {
+            errorText.setText(e.getMessage());
+        }
     }
+
+
 
 
     public static void setMovie(Movie mov) {
