@@ -86,7 +86,12 @@ public class MovieDetailsPageController {
     }
 
     @FXML
-    void buyTicketAction(ActionEvent event) {
+    void buyTicketAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BuyTicketForm.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Buy Tickets Page");
+        stage.setScene(new Scene(root, 600,400));
+        stage.show();
 
     }
 
