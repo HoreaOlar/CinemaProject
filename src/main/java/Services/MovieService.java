@@ -1,6 +1,7 @@
 package Services;
 
 import Controllers.AdministratorPageController;
+import Controllers.BuyTicketFormController;
 import Controllers.MovieDetailsPageController;
 import Controllers.MoviesPageController;
 import Exceptions.CouldNotWriteUsersException;
@@ -105,6 +106,7 @@ public class MovieService {
 
     private static void setMovieDetails(Movie movie) throws IOException {
         MovieDetailsPageController.setMovie(movie);
+        BuyTicketFormController.setMovie(movie);
 
         Parent root = FXMLLoader.load(MovieService.class.getClassLoader().getResource("MovieDetailsPage.fxml"));
         Stage stage=new Stage();
