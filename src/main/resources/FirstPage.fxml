@@ -21,7 +21,7 @@
             <Image url="@../../../../login/src/Image/114809.1431164889.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="4.0" layoutY="321.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="200.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layout  X="4.0" layoutY="321.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="200.0">
          <image>
             <Image url="@Images/gf1.gif" />
          </image>
@@ -41,12 +41,12 @@
             <Font name="Arial" size="250.0" />
          </font>
       </Text>
-      <TextField fx:id="usernameField" layoutX="1024.0" layoutY="93.0" prefHeight="60.0" prefWidth="290.0" promptText="Username">
+      <TextField fx:id="usernameField" layoutX="1024.0" layoutY="93.0"  onAction="#onEnter" prefHeight="60.0" prefWidth="290.0" promptText="Username">
          <font>
             <Font size="27.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordField" layoutX="1024.0" layoutY="196.0" prefHeight="60.0" prefWidth="290.0" promptText="Password">
+      <PasswordField fx:id="passwordField" layoutX="1024.0" layoutY="196.0" onAction="#onEnter" prefHeight="60.0" prefWidth="290.0" promptText="Password">
          <font>
             <Font size="27.0" />
          </font>

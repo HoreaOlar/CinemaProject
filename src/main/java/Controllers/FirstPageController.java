@@ -1,6 +1,7 @@
 package Controllers;
 
 import Services.MovieService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,11 +10,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import Services.UserService;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -67,8 +72,6 @@ public class FirstPageController {
         }
     }
 
-
-
     public void handleLoginAction() {
 
         try {
@@ -82,5 +85,9 @@ public class FirstPageController {
         } catch (Exception e) {
             text.setText(e.getMessage());
         }
+    }
+
+    public void onEnter(ActionEvent actionEvent) {
+        handleLoginAction();
     }
 }

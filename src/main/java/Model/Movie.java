@@ -10,7 +10,6 @@ public class Movie {
     private String trailer;
     private String image;
     private  double price;
-    private int sits;
     private List<Date> date;
     private List<String> comments=new ArrayList<>();
     private int winnings;
@@ -18,13 +17,12 @@ public class Movie {
     public Movie(){
     }
 
-    public Movie(String title, String description, String trailer, String image,  double price, int sits, List<Date> date) {
+    public Movie(String title, String description, String trailer, String image,  double price, List<Date> date) {
         this.title = title;
         this.description = description;
         this.trailer = trailer;
         this.image = image;
         this.price = price;
-        this.sits = sits;
         this.date = date;
     }
 
@@ -68,14 +66,6 @@ public class Movie {
 
     public void setPrice( double price) {
         this.price = price;
-    }
-
-    public int getSits() {
-        return sits;
-    }
-
-    public void setSits(int sits) {
-        this.sits = sits;
     }
 
     public List<Date> getDate() {
@@ -123,7 +113,6 @@ public class Movie {
                 ", trailer='" + trailer + '\'' +
                 ", image='" + image + '\'' +
                 ", price=" + price +
-                ", sits=" + sits +
                 ", date=" + date +
                 ", comments=" + comments +
                 ", winnings=" + winnings +
