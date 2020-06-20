@@ -1,5 +1,7 @@
 package Model;
 
+import Services.MovieService;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -10,22 +12,23 @@ public class Movie {
     private String trailer;
     private String image;
     private  double price;
-    private int sits;
     private List<Date> date;
+    private Date dateAux;
     private List<String> comments=new ArrayList<>();
-    private int winnings;
+    private double winnings;
+    private static double winningsTotal;
 
     public Movie(){
     }
 
-    public Movie(String title, String description, String trailer, String image,  double price, int sits, List<Date> date) {
+    public Movie(String title, String description, String trailer, String image,  double price, List<Date> date) {
         this.title = title;
         this.description = description;
         this.trailer = trailer;
         this.image = image;
         this.price = price;
-        this.sits = sits;
         this.date = date;
+        this.winnings=0;
     }
 
 
@@ -70,20 +73,27 @@ public class Movie {
         this.price = price;
     }
 
-    public int getSits() {
-        return sits;
-    }
-
-    public void setSits(int sits) {
-        this.sits = sits;
-    }
-
     public List<Date> getDate() {
         return date;
     }
 
     public void setDate(List<Date> date) {
         this.date = date;
+    }
+
+    public void addDate(Date date){
+        this.date.add(date);
+    }
+
+    public void deleteDate(String day, String hour){
+        for(Date i : date)
+            if((hour.equals(i.getHour())) && (day.equals(i.getDay())))
+                dateAux=i;
+         this.date.remove(dateAux);
+    }
+
+    public void increaseWinnings(int nr){
+       winnings= winnings + nr*price;
     }
 
     public List<String> getComments() {
@@ -94,7 +104,8 @@ public class Movie {
         this.comments = comments;
     }
 
-    public int getWinnings() {
+    public double getWinnings() {
+
         return winnings;
     }
 
@@ -123,7 +134,6 @@ public class Movie {
                 ", trailer='" + trailer + '\'' +
                 ", image='" + image + '\'' +
                 ", price=" + price +
-                ", sits=" + sits +
                 ", date=" + date +
                 ", comments=" + comments +
                 ", winnings=" + winnings +

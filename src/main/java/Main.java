@@ -1,3 +1,4 @@
+import Services.MovieService;
 import Services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +15,13 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         UserService.loadUsersFromFile();
+        MovieService.loadMoviesFromFile();
+        MovieService.createMovieButtons();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("FirstPage.fxml"));
-        primaryStage.setTitle("Registration Example");
+        primaryStage.setTitle("Cinema Application");
         primaryStage.setScene(new Scene(root, 1366,768));
-        primaryStage.setFullScreen(true);
+        primaryStage.setFullScreen(false);
         primaryStage.setResizable(false);
         primaryStage.show();
     }

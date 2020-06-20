@@ -29,8 +29,6 @@ public class UserService {
     private static List<User> users;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
 
-
-
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
@@ -76,11 +74,6 @@ public class UserService {
         if(sw==0) throw new LoginFail();
     }
 
-
-
-
-
-
     private static void persistUsers() {
         try {
 
@@ -91,10 +84,6 @@ public class UserService {
             throw new CouldNotWriteUsersException();
         }
     }
-
-
-
-
 
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:id="scroll1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2000.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MovieDetailsAdminPageController">
+    <content>
+        <AnchorPane fx:id="anchorPane" minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="1366.0" style="-fx-background-color: #191A27;">
+            <children>
+                <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#363850" height="3000.0" layoutX="440.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="966.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0" />
+                <ImageView fx:id="movieImage" fitHeight="280.0" fitWidth="200.0" layoutX="219.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="10.0" />
+                <WebView fx:id="movieTrailer" layoutX="218.0" layoutY="329.0" minHeight="550.0" minWidth="946.0" prefHeight="550.0" prefWidth="946.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="310.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#565876" height="280.0" layoutX="440.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="735.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="10.0" />
+                <Text fx:id="movieDescription" layoutX="423.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="726.1366786956787" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+                <Button fx:id="addReviewButton" layoutX="975.0" layoutY="960.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="182.0" text="Add" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="962.0">
+                    <font>
+                        <Font size="27.0" />
+                    </font>
+                </Button>
+                <Button fx:id="backButton" layoutX="38.0" layoutY="11.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" onAction="#toAdministratorPage" text="Back" AnchorPane.leftAnchor="50.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Button>
+                <TextArea fx:id="addReviewText" layoutX="210.0" layoutY="962.0" prefHeight="200.0" prefWidth="752.0" promptText="Add your review" wrapText="true" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="404.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </TextArea>
+                <ScrollPane fx:id="scroll2" layoutX="210.0" layoutY="1197.0" prefHeight="780.0" prefWidth="752.0">
+                    <content>
+                        <TilePane fx:id="tilePaneReview" prefHeight="4000.0" prefWidth="752.0" />
+                    </content>
+                </ScrollPane>
+            <Button fx:id="modifyScheduleButton" layoutX="254.0" layoutY="884.0" onAction="#handleModifyButtonAction" mnemonicParsing="false" prefHeight="52.0" prefWidth="144.0" text="MODIFY SCHEDULE" />
+            <Button fx:id="deleteButton" layoutX="450.0" layoutY="884.0" onAction="#handleDeleteButtonAction" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="DELETE MOVIE" />
+            </children></AnchorPane>
+    </content>
+</ScrollPane>

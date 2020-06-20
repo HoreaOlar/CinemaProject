@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.AdministratorPageController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdministratorPageController">
+    <children>
+        <ScrollPane layoutX="1118.0" layoutY="119.0" prefHeight="649.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="1166.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="201.0">
+            <content>
+                <TilePane fx:id="tilePane" prefHeight="668.0" prefWidth="1151.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);;">
+                    <children>
+                        <Button fx:id="button" mnemonicParsing="false" onAction="#handleAddButtonAction" opacity="0.91" prefHeight="370.0" prefWidth="260.0" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="+">
+                            <TilePane.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </TilePane.margin>
+                            <font>
+                                <Font name="DejaVu Serif Bold" size="77.0" />
+                            </font>
+                        </Button>
+                  <Button fx:id="seeWinningsButton" mnemonicParsing="false" onAction="#handleSeeWinningsButton" opacity="0.91" prefHeight="370.0" prefWidth="260.0" style="-fx-background-radius: 40; -fx-background-color: #D3D3D3;" text="Winnings">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="30.0" />
+                     </font>
+                  </Button>
+                    </children>
+                </TilePane>
+            </content>
+        </ScrollPane>
+        <Button layoutX="17.0" layoutY="100.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Action" textFill="WHITE" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font></Button>
+        <Button layoutX="27.0" layoutY="110.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Adventure" textFill="WHITE" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="27.0" layoutY="110.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Comedy" textFill="WHITE" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="27.0" layoutY="110.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Horror" textFill="WHITE" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutY="598.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Drama" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="608.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Crime" textFill="WHITE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="608.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Fantasy" textFill="WHITE" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="608.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Musical" textFill="WHITE" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutY="518.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Mystery" textFill="WHITE" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="10.0" layoutY="528.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Science Fiction " textFill="WHITE" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="37.0" layoutY="120.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Animation" textFill="WHITE" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="47.0" layoutY="130.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Romance" textFill="WHITE" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Button layoutX="57.0" layoutY="140.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #181818; -fx-border-color: #080808;" text="Thriller" textFill="WHITE" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="0.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Text fill="#f2eded" layoutX="0.25390625" layoutY="80.07666015625" strokeType="OUTSIDE" strokeWidth="0.0" text="   CINEMA  CINEMA   CINEMA" textAlignment="CENTER" wrappingWidth="1367.25390625" AnchorPane.bottomAnchor="668.8203125" AnchorPane.leftAnchor="0.25390625" AnchorPane.topAnchor="4.890625">
+            <font>
+                <Font name="System Bold" size="81.0" />
+            </font>
+        </Text>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="logOffButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" prefHeight="78.0" prefWidth="93.0" text="LOG OFF">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    </children>
 </AnchorPane>
