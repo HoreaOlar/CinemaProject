@@ -42,18 +42,39 @@ public class FirstPageControllerTest extends ApplicationTest {
         controller.usernameField.setText(TEST_USER);
     }
 
-   /* @Test
+    @Test
     public void testRegistrationSuccess() {
         controller.handleRegisterAction();
         assertEquals(2, UserService.getUsers().size());
         assertEquals("Account created successfully!", controller.text.getText());
-    }*/
+    }
 
     @Test
     public void testRegistrationSameUser() {
         controller.handleRegisterAction();
         controller.handleRegisterAction();
         assertEquals("An account with the username "+TEST_USER+" already exists!", controller.text.getText());
+    }
+
+    @Test
+    public void testLoginCorrectCredentialsForUser() {
+        controller.handleRegisterAction();
+        controller.handleLoginAction();
+        assertNotEquals("Incorrect credentials",controller.text.getText());
+    }
+
+    @Test
+    public void testLoginCorrectCredentialsForAdmin() {
+        controller.usernameField.setText("admin");
+        controller.passwordField.setText("admin");
+        controller.handleLoginAction();
+        assertNotEquals("Incorrect credentials",controller.text.getText());
+    }
+
+    @Test
+    public void testLoginIncorrectCredentials() {
+        controller.handleLoginAction();
+        assertEquals("Incorrect credentials",controller.text.getText());
     }
 
 

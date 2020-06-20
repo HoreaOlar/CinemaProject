@@ -4,9 +4,14 @@
   "trailer" : "https://content.video.imedia.ro/storage/movie/b5/ee/1z/1jtxb5ee1z_mp4_720p_1575063168.mp4",
   "image" : "https://images-na.ssl-images-amazon.com/images/I/81nXcPXv69L.jpg",
   "price" : 10.1,
-  "date" : [ ],
+  "date" : [ {
+    "day" : "Monday",
+    "hour" : "10:00",
+    "occupiedSits" : 0,
+    "avaliableSits" : 10
+  } ],
   "comments" : [ "This is the best review ever, bitch!" ],
-  "winnings" : 0
+  "winnings" : 0.0
 }, {
   "title" : "White Chicks",
   "description" : "În comedia extrem de amuzantă a Revolution Studios, Două pupeze albe, Shawn și Marlon Wayans interpretează rolul a doi agenți FBI ambițioși, dar ghinioniști, care acționează sub acoperire ca două tinere debutante în înalta societate, în stațiunea de lux Hamptons, pentru a investiga un grup de răpitori. În timp ce își fac intrarea cu pompă în cadrul evenimentului social al anului, cei doi află că este mult mai greu decât pare să pătrunzi în înalta societate.\n\nÎn ciuda eforturilor, agenții Marcus și Kevin Copeland (Marlon și Shawn Wayans) ajung pe cea mai joasă treaptă în ierharhia din cadrul FBI, dominată de o concurență acerbă. Cea mai recentă acțiune a lor a fost un eșec și slujbele atârnă de un fir de ață. Când se descoperă că se pune la cale un scenariul pentru răpirea a două răsfățate surori cu poziție socială înaltă, Brittany și Tiffany Wilson (Maitland Ward și Anne Dudek), cazul important este încredințat rivalilor lui Marcus și Kevin, agenții Vincent Gomez (Eddie Velez) și Jake Harper (Lochlyn Munro).\n",

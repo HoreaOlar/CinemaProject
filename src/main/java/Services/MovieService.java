@@ -244,7 +244,7 @@ public class MovieService {
     /******************************************************
      * CHECK IF THE INORMATION FOR BUYING TICKETS ARE GOOD*
      ******************************************************/
-    public static void checkBuy(String ticketsField, int avaliableSits, String cardNumberField) throws Exception{
+    public static void checkBuy(String ticketsField, int avaliableSits, String cardNumberField) throws EmptyFieldException,ExceededSitsException,WrongCardNumberException{
         if(ticketsField.equals("")) throw new EmptyFieldException();
         if(Integer.parseInt(ticketsField)>avaliableSits) throw new ExceededSitsException();
         if(cardNumberField.length()!=16) throw new WrongCardNumberException();
@@ -302,6 +302,7 @@ public class MovieService {
      * IF TICKETS ARE SELL, WE UPDATE (UN)AVALIABLE SITS FOR THAT MOVIE AT THAT DATE *
      *********************************************************************************/
     public static void setSits(Date date){
+        if(movies.indexOf(activMovie)!=-1) //need for a test
         for (Date datem: movies.get(movies.indexOf(activMovie)).getDate())
             if(Objects.equals(datem.getHour(),date.getHour()) && Objects.equals(datem.getDay(),date.getDay()))
             {
