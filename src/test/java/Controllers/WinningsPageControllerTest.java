@@ -18,7 +18,7 @@ public class WinningsPageControllerTest extends ApplicationTest {
 
     @BeforeClass
     public static void setupClass() throws Exception {
-        FileSystemService.APPLICATION_FOLDER = ".test-registration-example";
+        FileSystemService.APPLICATION_FOLDER = ".test-cinema";
         FileSystemService.initApplicationHomeDirIfNeeded();
         UserService.loadUsersFromFile();
     }

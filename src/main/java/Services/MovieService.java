@@ -339,4 +339,7 @@ public class MovieService {
         return sum;
     }
 
+    public static List<Movie> getMovies(){
+        return movies;
+    }
 }

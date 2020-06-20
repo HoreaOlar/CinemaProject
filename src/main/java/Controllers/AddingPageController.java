@@ -22,33 +22,33 @@ import java.util.List;
 
 public class AddingPageController {
     @FXML
-    private TextField title;
+    TextField title;
     @FXML
-    private TextField description;
+    TextField description;
     @FXML
-    private TextField trailer;
+    TextField trailer;
     @FXML
-    private TextField image;
+    TextField image;
     @FXML
-    private TextField price;
+    TextField price;
     @FXML
-    private TextField seats;
+    TextField seats = new TextField();
     @FXML
     private Button addingButton;
     @FXML
     private Button addingDate;
     @FXML
-    private  ChoiceBox<String> choiceBoxDay = new ChoiceBox<>();
+    ChoiceBox<String> choiceBoxDay = new ChoiceBox<>();
     @FXML
-    private ChoiceBox<String> choiceBoxHour = new ChoiceBox<>();
+    ChoiceBox<String> choiceBoxHour = new ChoiceBox<>();
     @FXML
     private Text textEroare;
 
-    private List<Date> date = new ArrayList<>();
-    private Date data;
-    private Movie movie;
-    private double price1;
-    private int seats1;
+    List<Date> date = new ArrayList<>();
+    Date data;
+    Movie movie;
+    double price1;
+    int seats1;
 
     @FXML
     public  void initialize(){
