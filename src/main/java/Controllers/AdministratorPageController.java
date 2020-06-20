@@ -19,6 +19,8 @@ public class AdministratorPageController {
     @FXML
     private Button logOffButton;
     @FXML
+    private Button seeWinningsButton;
+    @FXML
     private void initialize(){
         MovieService.injectapc(this);
     }
@@ -46,6 +48,16 @@ public class AdministratorPageController {
         stage.show();
     }
 
+    public void setWinningsPage() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("WinningsPage.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Winnings Page");
+        stage.setScene(new Scene(root, 600,400));
+        stage.setFullScreen(false);
+        stage.setResizable(false);
+        stage.show();
+    }
+
     public void handleLogOffButtonAction() throws IOException{
         setFirstPage();
         Stage stage = (Stage) logOffButton.getScene().getWindow();
@@ -57,6 +69,11 @@ public class AdministratorPageController {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
     }
+
+    public void handleSeeWinningsButton() throws IOException{
+        setWinningsPage();
+    }
+
     public TilePane getTilePane() {
         return tilePane;
     }

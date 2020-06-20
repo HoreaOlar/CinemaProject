@@ -16,6 +16,7 @@ public class Movie {
     private Date dateAux;
     private List<String> comments=new ArrayList<>();
     private double winnings;
+    private static double winningsTotal;
 
     public Movie(){
     }

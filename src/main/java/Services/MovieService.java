@@ -264,7 +264,13 @@ public class MovieService {
                 i.increaseWinnings(nr);
 
         persistMovies();
+    }
 
+    public  static double showTotalWinnings(){
+        double sum=0;
+        for(Movie i : movies)
+            sum = sum + i.getWinnings();
+        return sum;
     }
 
 }
