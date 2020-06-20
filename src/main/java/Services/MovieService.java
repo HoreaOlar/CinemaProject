@@ -205,6 +205,7 @@ public class MovieService {
         Stage stage=new Stage();
         stage.setTitle("Movies Details Page");
         stage.setScene(new Scene(root, 1366,768));
+        stage.setResizable(false);
 
         stage.show();
         Stage stage1 = (Stage) mpc.getTilePane().getScene().getWindow();

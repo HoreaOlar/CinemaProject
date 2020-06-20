@@ -26,6 +26,7 @@ public class MoviesPageController {
     {
         scrool.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrool.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
         MovieService.injectmp(this);
     }
 
