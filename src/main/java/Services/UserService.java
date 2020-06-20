@@ -19,8 +19,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class UserService {
-    private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+    static List<User> users;
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
 
     /********************************
      * SAVE USERS FROM FILE IN LIST *
@@ -50,7 +50,7 @@ public class UserService {
     /********************************************
      * CHECK IF THE FILED FROM GUY AREN'T EMPTY *
      ********************************************/
-    private static void checkEmptyField(String username, String password) throws EmptyFieldException {
+    public static void checkEmptyField(String username, String password) throws EmptyFieldException {
         if(username.equals("") || password.equals("")) throw new EmptyFieldException();
     }
 
@@ -58,7 +58,7 @@ public class UserService {
     /****************************************************
      * CHECK IF THE USERNAME ALREDY EXISTS IN JSON/LIST *
      ****************************************************/
-    private static void checkUsernameAlreadyExist(String username) throws UsernameAlreadyExistException {
+    public static void checkUsernameAlreadyExist(String username) throws UsernameAlreadyExistException {
 
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
@@ -103,7 +103,7 @@ public class UserService {
     /*******************
      * ENCODE PASSWORD *
      *******************/
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
         byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
