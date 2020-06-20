@@ -46,8 +46,8 @@
                         <TilePane fx:id="tilePaneReview" prefHeight="4000.0" prefWidth="752.0" />
                     </content>
                 </ScrollPane>
-            <Button layoutX="254.0" layoutY="884.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="144.0" text="MODIFY SCHEDULE" />
-            <Button layoutX="450.0" layoutY="884.0" onAction="#handleDeleteButtonAction" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="DELETE MOVIE" />
+            <Button fx:id="modifyScheduleButton" layoutX="254.0" layoutY="884.0" onAction="#handleModifyButtonAction" mnemonicParsing="false" prefHeight="52.0" prefWidth="144.0" text="MODIFY SCHEDULE" />
+            <Button fx:id="deleteButton" layoutX="450.0" layoutY="884.0" onAction="#handleDeleteButtonAction" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="DELETE MOVIE" />
             </children></AnchorPane>
     </content>
 </ScrollPane>

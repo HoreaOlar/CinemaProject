@@ -64,6 +64,9 @@ public class MovieDetailsAdminPageController {
     @FXML
     private Button deleteButton;
 
+    @FXML
+    private Button modifyScheduleButton;
+
     private static Movie movie;
 
     @FXML
@@ -115,6 +118,17 @@ public class MovieDetailsAdminPageController {
         stage.show();
     }
 
+    public void setModifyingMovieDetailsPage() throws IOException {
+        ModifyingMovieDetailsController.setMovie(movie);
+
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ModifyingMovieDetails.fxml"));
+        Stage stage=new Stage();
+        stage.setTitle("Modifying Schedule Page");
+        stage.setScene(new Scene(root, 600,400));
+        stage.setFullScreen(false);
+
+        stage.show();
+    }
     public void handleDeleteButtonAction() throws IOException{
         MovieService.deleteMovie(movie);
         setAdministratorPage();
@@ -122,6 +136,9 @@ public class MovieDetailsAdminPageController {
         stage.close();
     }
 
+    public void handleModifyButtonAction()  throws IOException{
+        setModifyingMovieDetailsPage();
+    }
 
     public TilePane getTilePaneReview() {
         return tilePaneReview;
