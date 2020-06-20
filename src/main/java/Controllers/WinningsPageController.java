@@ -8,12 +8,14 @@ import javafx.scene.text.Text;
 public class WinningsPageController {
 
     @FXML
-    private Text text;
+    Text text;
 
     @FXML
     public void initialize(){
         text.setText(String.valueOf(MovieService.showTotalWinnings()) + " $");
     }
 
-
+    public double getWinnings(){
+        return MovieService.showTotalWinnings();
+    }
 }
