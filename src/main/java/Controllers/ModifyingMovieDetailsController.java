@@ -1,21 +1,19 @@
 package Controllers;
 
+import Exceptions.DateAlreadyExists;
+import Exceptions.EmptyFieldException;
 import Model.Date;
 import Model.Movie;
-
 import Services.MovieService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
+import javafx.scene.text.Text;
 import java.io.IOException;
 
 
 public class ModifyingMovieDetailsController {
-    private static Movie movie;
-
     @FXML
     private Button deleteButton;
     @FXML
@@ -24,12 +22,16 @@ public class ModifyingMovieDetailsController {
     private ChoiceBox<String> choiceBoxDay;
     @FXML
     private ChoiceBox<String> choiceBoxHour;
-
-    private Date data;
+    @FXML
+    private Text text;
     @FXML
     private TextField seats;
+
+    private static Movie movie;
     private int seats1;
+    private Date data;
     private int ok=1;
+
     @FXML
     public void initialize(){
         choiceBoxDay.getItems().addAll("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
@@ -38,13 +40,11 @@ public class ModifyingMovieDetailsController {
         choiceBoxHour.setValue("10:00");
     }
 
-    public static void setMovie(Movie mov) {
-        movie = mov;
-    }
-
     public void handleAddButtonAction() throws IOException{
-        if(!(choiceBoxDay.getValue().equals("") && choiceBoxHour.getValue().equals("")))
-        {
+        try {
+        if(seats.getText().equals(""))
+            throw new EmptyFieldException();
+
             data = new Date(choiceBoxDay.getValue(),choiceBoxHour.getValue());
             seats1 = Integer.valueOf(seats.getText());
             data.setAvaliableSits(seats1);
@@ -56,14 +56,28 @@ public class ModifyingMovieDetailsController {
                 movie.addDate(data);
                 MovieService.persistMovies();
             }
-        }
+            else
+                throw new DateAlreadyExists();
 
+
+    }catch(Exception e){
+            if(e instanceof EmptyFieldException)
+                text.setText("Please add seats!");
+            else
+                text.setText("Date already exists!");
+        }
     }
 
     public void handleDeleteButtonAction() throws IOException {
         if (!(choiceBoxDay.getValue().equals("") && choiceBoxHour.getValue().equals(""))) {
-            movie.deleteDate(choiceBoxDay.getValue(),choiceBoxHour.getValue());
+            if(movie.deleteDate(choiceBoxDay.getValue(),choiceBoxHour.getValue()))
+                text.setText("Date deleted!");
             MovieService.persistMovies();
         }
     }
+
+    public static void setMovie(Movie mov) {
+        movie = mov;
+    }
+
 }

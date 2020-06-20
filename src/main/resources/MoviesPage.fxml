@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MoviesPageController">
    <children>
-      <ScrollPane layoutX="1118.0" layoutY="119.0" prefHeight="649.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="1166.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="201.0">
+      <ScrollPane fx:id="scrool" layoutX="1118.0" layoutY="119.0" prefHeight="649.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="1166.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="201.0">
          <content>
             <TilePane fx:id="tilePane" prefHeight="668.0" prefWidth="1151.0" style="-fx-background-image: url(&quot;https://pluspng.com/img-png/starry-sky-background-png-twinkling-stars-in-the-night-sky-loop-1920.png&quot;);;" />
          </content>
@@ -85,7 +85,7 @@
             <Font name="System Bold" size="80.0" />
          </font>
       </Text>
-      <Button layoutX="22.0" layoutY="23.0" fx:id="lofOffButton" onAction="#handleLogOffButton" mnemonicParsing="false" prefHeight="77.0" prefWidth="103.0" text="LOG OFF">
+      <Button fx:id="lofOffButton" layoutX="22.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleLogOffButton" prefHeight="77.0" prefWidth="103.0" text="LOG OFF">
          <font>
             <Font size="17.0" />
          </font>

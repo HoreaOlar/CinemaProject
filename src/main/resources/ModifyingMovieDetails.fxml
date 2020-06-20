@@ -17,10 +17,15 @@
         </Text>
       <ChoiceBox fx:id="choiceBoxDay" layoutX="58.0" layoutY="122.0" prefWidth="150.0" />
       <ChoiceBox fx:id="choiceBoxHour" layoutX="58.0" layoutY="151.0" prefWidth="150.0" />
-      <Button fx:id="addButton" layoutX="58.0" layoutY="278.0" onAction="#handleAddButtonAction" mnemonicParsing="false" text="ADD DATE" />
-      <Button fx:id="deleteButton" layoutX="190.0" layoutY="277.0" onAction="#handleDeleteButtonAction" mnemonicParsing="false" text="DELETE DATE" />
+      <Button fx:id="addButton" layoutX="58.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleAddButtonAction" text="ADD DATE" />
+      <Button fx:id="deleteButton" layoutX="190.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="DELETE DATE" />
       <TextField fx:id="seats" layoutX="60.0" layoutY="229.0" />
       <Text fill="WHITE" layoutX="63.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seats:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="333.0" layoutY="250.0" fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.619140625">
          <font>
             <Font size="22.0" />
          </font>

@@ -24,46 +24,32 @@ import java.io.IOException;
 public class MovieDetailsAdminPageController {
     @FXML
     private Text movieDescription;
-
     @FXML
     private Text ticketPriceText;
-
     @FXML
     private WebView movieTrailer;
-
     @FXML
     private TextArea addReviewText;
-
     @FXML
     private Button addReviewButton;
-
     @FXML
     private ImageView movieImage;
-
     @FXML
     private ScrollPane scroll1;
-
     @FXML
     private AnchorPane anchorPane;
-
     @FXML
     private Button buyTicketButton;
-
     @FXML
     private Button backButton;
-
     @FXML
     private Rectangle rectangle;
-
     @FXML
     private TilePane tilePaneReview;
-
     @FXML
     private ScrollPane scroll2;
-
     @FXML
     private Button deleteButton;
-
     @FXML
     private Button modifyScheduleButton;
 
@@ -82,35 +68,32 @@ public class MovieDetailsAdminPageController {
         movieImage.setImage(img);
         movieDescription.setText(movie.getTitle()+ "\n"+ movie.getDescription());
         movieTrailer.getEngine().load(movie.getTrailer());
-        MovieService.setReviews(movie);
-
-
     }
 
     @FXML
     public void toAdministratorPage(ActionEvent event) throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdministratorPage.fxml"));
         Stage stage=new Stage();
         stage.setTitle("Administrator Page");
         stage.setScene(new Scene(root, 1366,768));
+        stage.setResizable(false);
+
         MovieService.setMoviesAdmin();
         movieTrailer.getEngine().load(null);
+
         stage.show();
         Stage stage1 = (Stage) backButton.getScene().getWindow();
         stage1.close();
     }
 
-    public static void setMovie(Movie mov) {
-        movie = mov;
-    }
+
 
     public void setAdministratorPage() throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdministratorPage.fxml"));
         Stage stage=new Stage();
         stage.setTitle("Administrator Page");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(false);
+        stage.setResizable(false);
 
         MovieService.loadMoviesFromFile();
         MovieService.setMoviesAdmin();
@@ -125,11 +108,12 @@ public class MovieDetailsAdminPageController {
         Stage stage=new Stage();
         stage.setTitle("Modifying Schedule Page");
         stage.setScene(new Scene(root, 600,400));
-        stage.setFullScreen(false);
+        stage.setResizable(false);
 
         stage.show();
     }
-    public void handleDeleteButtonAction() throws IOException{
+    public void handleDeleteButtonAction() throws IOException, InterruptedException {
+        movieTrailer.getEngine().load(null);
         MovieService.deleteMovie(movie);
         setAdministratorPage();
         Stage stage= (Stage) deleteButton.getScene().getWindow();
@@ -140,8 +124,8 @@ public class MovieDetailsAdminPageController {
         setModifyingMovieDetailsPage();
     }
 
-    public TilePane getTilePaneReview() {
-        return tilePaneReview;
+    public static void setMovie(Movie mov) {
+        movie = mov;
     }
 
 }
