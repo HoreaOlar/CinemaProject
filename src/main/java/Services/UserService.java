@@ -15,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -125,4 +126,12 @@ public class UserService {
 
 
 
+
+
+    /******************
+     * NEED FOR TESTS *
+     ******************/
+    public static List<User> getUsers() {
+        return  users;
+    }
 }
