@@ -69,7 +69,7 @@ public class BuyTicketFormController {
     void buyTicketOnAction(ActionEvent event) {
         errorText.setText("");
         if(swh==0)
-            errorText.setText("Plese chose the date");
+            errorText.setText("Please choose the date");
         else
         try {
             System.out.println(ticketsField.getText());
@@ -80,6 +80,8 @@ public class BuyTicketFormController {
             chosenDate.setAvaliableSits(chosenDate.getAvaliableSits()-Integer.parseInt(ticketsField.getText()));
 
             MovieService.setSits(chosenDate);
+
+            MovieService.setWinnings(activmovie.getTitle(),Integer.parseInt(ticketsField.getText()));
 
             errorText.setText("Thank you for buying");
         } catch (Exception e) {
