@@ -23,44 +23,30 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MovieDetailsPageController {
-
-
     @FXML
     private Text movieDescription;
-
     @FXML
     private Text ticketPriceText;
-
     @FXML
     private WebView movieTrailer;
-
     @FXML
     private TextArea addReviewText;
-
     @FXML
     private Button addReviewButton;
-
     @FXML
     private ImageView movieImage;
-
     @FXML
     private ScrollPane scroll1;
-
     @FXML
     private AnchorPane anchorPane;
-
     @FXML
     private Button buyTicketButton;
-
     @FXML
     private Button backButton;
-
     @FXML
     private Rectangle rectangle;
-
     @FXML
     private TilePane tilePaneReview;
-
     @FXML
     private ScrollPane scroll2;
 
@@ -91,6 +77,7 @@ public class MovieDetailsPageController {
         Stage stage=new Stage();
         stage.setTitle("Buy Tickets Page");
         stage.setScene(new Scene(root, 600,400));
+        stage.setResizable(false);
         stage.show();
 
     }
@@ -110,8 +97,11 @@ public class MovieDetailsPageController {
         Stage stage=new Stage();
         stage.setTitle("Movies Page");
         stage.setScene(new Scene(root, 1366,768));
+        stage.setResizable(false);
+
         MovieService.setMoviesButtons();
         movieTrailer.getEngine().load(null);
+
         stage.show();
         Stage stage1 = (Stage) backButton.getScene().getWindow();
         stage1.close();
@@ -120,8 +110,6 @@ public class MovieDetailsPageController {
     public static void setMovie(Movie mov) {
         movie = mov;
     }
-
-
 
     public TilePane getTilePaneReview() {
         return tilePaneReview;

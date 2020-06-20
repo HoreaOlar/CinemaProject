@@ -16,16 +16,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.TilePane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddingPageController {
-    ObservableList<String> dayList=  FXCollections.observableArrayList("Monday","Tuesday");
-    private TilePane tilePane;
-    //static ObservableList<String> dayList = FXCollections.observableArrayList("Monday","Tuesday");
-
     @FXML
     private TextField title;
     @FXML
@@ -38,10 +33,6 @@ public class AddingPageController {
     private TextField price;
     @FXML
     private TextField seats;
-    private Date data;
-    private Movie movie;
-    private double price1;
-    private int seats1;
     @FXML
     private Button addingButton;
     @FXML
@@ -50,15 +41,17 @@ public class AddingPageController {
     private  ChoiceBox<String> choiceBoxDay = new ChoiceBox<>();
     @FXML
     private ChoiceBox<String> choiceBoxHour = new ChoiceBox<>();
-
-    private List<Date> date = new ArrayList<>();
-
     @FXML
     private Text textEroare;
 
+    private List<Date> date = new ArrayList<>();
+    private Date data;
+    private Movie movie;
+    private double price1;
+    private int seats1;
+
     @FXML
     public  void initialize(){
-
         choiceBoxDay.getItems().addAll("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
         choiceBoxDay.setValue("Monday");
         choiceBoxHour.getItems().addAll("10:00","12:00","14:00","16:00","18:00","20:00");
@@ -66,25 +59,20 @@ public class AddingPageController {
 
     }
 
-    public AddingPageController(){}
-    public AddingPageController(TilePane tilePane) {
-        this.tilePane = tilePane;
-    }
-
-
 
     public void setAdministratorPage() throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdministratorPage.fxml"));
         Stage stage=new Stage();
         stage.setTitle("Administrator Page");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(false);
+        stage.setResizable(false);
 
         MovieService.loadMoviesFromFile();
         MovieService.setMoviesAdmin();
 
         stage.show();
     }
+
 
     public void handleAddingDateAction() throws IOException{
         //salvarea datelor intr-o lista de date, care va fi ulterior adaugata intr-un obiect film
@@ -96,6 +84,7 @@ public class AddingPageController {
         data.setAvaliableSits(seats1);
         date.add(data);
     }
+
 
     public void handleAddingButtonAction() throws IOException, EmptyFieldException {
         //salvarea detaliilor filmului
@@ -130,7 +119,4 @@ public class AddingPageController {
             return d;
     }
 
-    public TilePane getTilePane() {
-        return tilePane;
-    }
 }

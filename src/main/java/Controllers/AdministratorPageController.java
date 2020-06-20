@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class AdministratorPageController {
@@ -33,7 +32,7 @@ public class AdministratorPageController {
         Stage stage=new Stage();
         stage.setTitle("Adding Page");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(false);
+        stage.setResizable(false);
 
         stage.show();
     }
@@ -43,7 +42,6 @@ public class AdministratorPageController {
         Stage stage = new Stage();
         stage.setTitle("Cinema Application");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(false);
         stage.setResizable(false);
         stage.show();
     }
@@ -53,7 +51,6 @@ public class AdministratorPageController {
         Stage stage = new Stage();
         stage.setTitle("Winnings Page");
         stage.setScene(new Scene(root, 600,400));
-        stage.setFullScreen(false);
         stage.setResizable(false);
         stage.show();
     }

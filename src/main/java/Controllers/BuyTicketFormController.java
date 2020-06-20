@@ -16,24 +16,16 @@ import javafx.scene.text.Text;
 import java.util.Objects;
 
 public class BuyTicketFormController {
-
     @FXML
     private ImageView movieImage;
-
     @FXML
     private TextField cardNumberField;
-
     @FXML
     private Text errorText;
-
     @FXML
     private ChoiceBox<String> dayChoiceBox;
-
-
     @FXML
     private ChoiceBox<String> hourChoiceBox;
-
-
     @FXML
     private TextField ticketsField;
 
@@ -43,7 +35,6 @@ public class BuyTicketFormController {
 
     @FXML
     private void initialize() {
-
         Image image = new Image(activmovie.getImage(), 160, 200, false, false);
         movieImage.setImage(image);
         setDayChoiceBox();
@@ -80,20 +71,12 @@ public class BuyTicketFormController {
             chosenDate.setAvaliableSits(chosenDate.getAvaliableSits()-Integer.parseInt(ticketsField.getText()));
 
             MovieService.setSits(chosenDate);
-
             MovieService.setWinnings(activmovie.getTitle(),Integer.parseInt(ticketsField.getText()));
 
             errorText.setText("Thank you for buying");
         } catch (Exception e) {
             errorText.setText(e.getMessage());
         }
-    }
-
-
-
-
-    public static void setMovie(Movie mov) {
-        activmovie = mov;
     }
 
     void setDayChoiceBox(){
@@ -103,9 +86,10 @@ public class BuyTicketFormController {
 
     }
 
-
-    public ChoiceBox<String> getHourChoiceBox() {
-        return hourChoiceBox;
+    public void setHour(String newValue) {
+        for(Date date: activmovie.getDate())
+            if(date.getDay().equals(newValue))
+                hourChoiceBox.getItems().add(date.getHour());
     }
 
     public  Date findDate(String day, String hour) {
@@ -116,12 +100,9 @@ public class BuyTicketFormController {
 
     }
 
-    public void setHour(String newValue) {
-        for(Date date: activmovie.getDate())
-            if(date.getDay().equals(newValue))
-                getHourChoiceBox().getItems().add(date.getHour());
+    public static void setMovie(Movie mov) {
+        activmovie = mov;
     }
-
 
 
 }

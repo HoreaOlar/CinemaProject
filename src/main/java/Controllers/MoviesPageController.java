@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
@@ -17,9 +18,14 @@ public class MoviesPageController {
     private TilePane tilePane;
     @FXML
     private Button lofOffButton;
+    @FXML
+    private ScrollPane scrool;
 
     @FXML
-    private void initialize(){
+    private void initialize()
+    {
+        scrool.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrool.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         MovieService.injectmp(this);
     }
 
@@ -28,7 +34,6 @@ public class MoviesPageController {
         Stage stage = new Stage();
         stage.setTitle("Cinema Application");
         stage.setScene(new Scene(root, 1366,768));
-        stage.setFullScreen(false);
         stage.setResizable(false);
         stage.show();
     }
@@ -42,6 +47,5 @@ public class MoviesPageController {
     public TilePane getTilePane() {
         return tilePane;
     }
-
 
 }
