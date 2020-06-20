@@ -82,7 +82,7 @@ public class MovieDetailsAdminPageController {
         movieImage.setImage(img);
         movieDescription.setText(movie.getTitle()+ "\n"+ movie.getDescription());
         movieTrailer.getEngine().load(movie.getTrailer());
-        MovieService.setReviews(movie);
+        //MovieService.setReviews(movie);
 
 
     }
@@ -129,7 +129,8 @@ public class MovieDetailsAdminPageController {
 
         stage.show();
     }
-    public void handleDeleteButtonAction() throws IOException{
+    public void handleDeleteButtonAction() throws IOException, InterruptedException {
+        movieTrailer.getEngine().load(null);
         MovieService.deleteMovie(movie);
         setAdministratorPage();
         Stage stage= (Stage) deleteButton.getScene().getWindow();

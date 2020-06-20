@@ -13,7 +13,6 @@ public class Movie {
     private String image;
     private  double price;
     private List<Date> date;
-    private Date dateAux;
     private List<String> comments=new ArrayList<>();
     private double winnings;
     private static double winningsTotal;
@@ -85,11 +84,17 @@ public class Movie {
         this.date.add(date);
     }
 
-    public void deleteDate(String day, String hour){
+    public boolean deleteDate(String day, String hour){
+        Date dateAux= new Date();
+        boolean ok=false;
         for(Date i : date)
             if((hour.equals(i.getHour())) && (day.equals(i.getDay())))
+            {
                 dateAux=i;
+                ok=true;
+             }
          this.date.remove(dateAux);
+            return ok;
     }
 
     public void increaseWinnings(int nr){

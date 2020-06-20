@@ -1,5 +1,7 @@
 package Controllers;
 
+import Exceptions.DateAlreadyExists;
+import Exceptions.EmptyFieldException;
 import Model.Date;
 import Model.Movie;
 
@@ -9,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 
@@ -24,7 +27,8 @@ public class ModifyingMovieDetailsController {
     private ChoiceBox<String> choiceBoxDay;
     @FXML
     private ChoiceBox<String> choiceBoxHour;
-
+    @FXML
+    private Text text;
     private Date data;
     @FXML
     private TextField seats;
@@ -43,8 +47,10 @@ public class ModifyingMovieDetailsController {
     }
 
     public void handleAddButtonAction() throws IOException{
-        if(!(choiceBoxDay.getValue().equals("") && choiceBoxHour.getValue().equals("")))
-        {
+        try {
+        if(seats.getText().equals(""))
+            throw new EmptyFieldException();
+
             data = new Date(choiceBoxDay.getValue(),choiceBoxHour.getValue());
             seats1 = Integer.valueOf(seats.getText());
             data.setAvaliableSits(seats1);
@@ -56,13 +62,21 @@ public class ModifyingMovieDetailsController {
                 movie.addDate(data);
                 MovieService.persistMovies();
             }
-        }
+            else
+                throw new DateAlreadyExists();
 
-    }
+
+    }catch(Exception e){
+            if(e instanceof EmptyFieldException)
+                text.setText("Please add seats!");
+            else
+                text.setText("Date already exists!");
+        } }
 
     public void handleDeleteButtonAction() throws IOException {
         if (!(choiceBoxDay.getValue().equals("") && choiceBoxHour.getValue().equals(""))) {
-            movie.deleteDate(choiceBoxDay.getValue(),choiceBoxHour.getValue());
+            if(movie.deleteDate(choiceBoxDay.getValue(),choiceBoxHour.getValue()))
+                text.setText("Date deleted!");
             MovieService.persistMovies();
         }
     }

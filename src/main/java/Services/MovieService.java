@@ -211,10 +211,6 @@ public class MovieService {
 
     }
 
-
-
-
-
     private static void setReview(String review) {
         TextArea textArea= new TextArea(review);
         textArea.setPrefWidth(752);
