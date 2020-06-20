@@ -47,6 +47,7 @@ public class AddingPageControllerTest extends ApplicationTest {
         controller.trailer = new TextField();
         controller.image = new TextField();
         controller.price = new TextField();
+        controller.seats= new TextField();
 
     }
 
@@ -76,6 +77,30 @@ public class AddingPageControllerTest extends ApplicationTest {
         MovieService.addMovie(controller.movie);
         long l=new Long(MovieService.getMovies().size());
         assertEquals(1,l);
+    }
+
+    @Test
+    public void addingTheSameMovie() throws IOException {
+        controller.choiceBoxDay.setValue("Monday");
+        controller.choiceBoxHour.setValue("10:00");
+        controller.seats.setText("");
+        controller.handleAddingDateAction();
+        controller.title.setText("Titlu_test");
+        controller.description.setText("Description_test");
+        controller.image.setText("Image_test");
+        controller.price1=10;
+        controller.trailer.setText("Trailer_test");
+        controller.movie = new Movie(controller.title.getText(),controller.description.getText(),controller.trailer.getText(),controller.image.getText(),controller.price1,controller.date);
+        controller.movie = new Movie(controller.title.getText(),controller.description.getText(),controller.trailer.getText(),controller.image.getText(),controller.price1,controller.date);
+        long l=new Long(MovieService.getMovies().size());
+        assertEquals(1,l);
+    }
+
+    @Test
+    public void deleteMovieAction(){
+        MovieService.deleteMovie(movie);
+        long l=new Long(MovieService.getMovies().size());
+        assertEquals(0,l);
     }
 
 }
