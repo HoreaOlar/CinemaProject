@@ -34,16 +34,18 @@ import java.util.Objects;
 public class MovieService {
     //DECLARATIONS
     private static MoviesPageController mpc;
-    private static AdministratorPageController apc;
+    static AdministratorPageController apc;
     private static MovieDetailsPageController mdpc;
     private static MovieDetailsAdminPageController amdpc;
 
-    private static List<Movie> movies=new ArrayList<>();
-    private static List<Button> movieButton=new ArrayList<>();
+    static List<Movie> movies=new ArrayList<>();
+    static List<Button> movieButton=new ArrayList<>();
 
-    private static final Path MOVIES_PATH = FileSystemService.getPathToFile("config", "movies.json");
+    static final Path MOVIES_PATH = FileSystemService.getPathToFile("config", "movies.json");
 
     private static String activUser;
+
+
     private static Movie activMovie;
     private static int which;
 
@@ -141,7 +143,9 @@ public class MovieService {
 
         ImageView imageView = DesignImage(movie.getImage());
 
+
         Button button=new Button("",imageView);
+        button.setId(movie.getTitle()); //need for a test
         button.setPrefSize(285,390);
         button.setStyle("-fx-border-color: transparent;-fx-background-color: transparent; ");
         button.setTooltip(new Tooltip(movie.getTitle()));
@@ -343,4 +347,6 @@ public class MovieService {
     public static List<Movie> getMovies(){
         return movies;
     }
+
+    public static void setActivMovie(Movie activMovie) { MovieService.activMovie = activMovie; }
 }
