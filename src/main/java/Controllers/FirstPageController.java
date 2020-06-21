@@ -18,15 +18,15 @@ import java.util.Objects;
 
 public class FirstPageController {
     @FXML
-    private Button loginB;
+    Button loginB;
     @FXML
-    private Button registerB;
+    Button registerB;
     @FXML
-    private TextField usernameField;
+    TextField usernameField;
     @FXML
-    private PasswordField passwordField;
+    PasswordField passwordField;
     @FXML
-    private Text text;
+    Text text;
 
     public void setMoviesPage() throws IOException {
 

@@ -30,7 +30,7 @@ public class MovieDetailsPageController {
     @FXML
     private WebView movieTrailer;
     @FXML
-    private TextArea addReviewText;
+    TextArea addReviewText;
     @FXML
     private Button addReviewButton;
     @FXML
@@ -50,7 +50,7 @@ public class MovieDetailsPageController {
     @FXML
     private ScrollPane scroll2;
 
-    private static Movie movie;
+    static Movie movie;
 
     @FXML
     private void initialize() throws IOException {
@@ -83,10 +83,9 @@ public class MovieDetailsPageController {
     }
 
     @FXML
-    void addReviewAction(ActionEvent event) throws IOException {
+    void addReviewAction() throws IOException {
         MovieService.addReviews(movie.getTitle(),addReviewText.getText());
         addReviewText.clear();
-
     }
 
 

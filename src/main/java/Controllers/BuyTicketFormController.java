@@ -1,8 +1,12 @@
 package Controllers;
 
+import Exceptions.EmptyFieldException;
+import Exceptions.ExceededSitsException;
+import Exceptions.WrongCardNumberException;
 import Model.Date;
 import Model.Movie;
 import Services.MovieService;
+import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,20 +21,27 @@ import java.util.Objects;
 
 public class BuyTicketFormController {
     @FXML
-    private ImageView movieImage;
+    ImageView movieImage;
     @FXML
-    private TextField cardNumberField;
+    TextField cardNumberField;
     @FXML
-    private Text errorText;
+    Text errorText;
     @FXML
-    private ChoiceBox<String> dayChoiceBox;
+    ChoiceBox<String> dayChoiceBox;
     @FXML
-    private ChoiceBox<String> hourChoiceBox;
+    ChoiceBox<String> hourChoiceBox;
     @FXML
-    private TextField ticketsField;
+    TextField ticketsField;
+
 
     private static Movie activmovie;
+
+
+
     private Date chosenDate;
+
+
+
     private int swh=0;
 
     @FXML
@@ -57,14 +68,12 @@ public class BuyTicketFormController {
     }
 
     @FXML
-    void buyTicketOnAction(ActionEvent event) {
+    void buyTicketOnAction() {
         errorText.setText("");
         if(swh==0)
             errorText.setText("Please choose the date");
         else
         try {
-            System.out.println(ticketsField.getText());
-            System.out.println(chosenDate.getAvaliableSits());
             MovieService.checkBuy(ticketsField.getText(), chosenDate.getAvaliableSits(), cardNumberField.getText());
 
             chosenDate.setOccupiedSits(chosenDate.getOccupiedSits()+Integer.parseInt(ticketsField.getText()));
@@ -74,12 +83,14 @@ public class BuyTicketFormController {
             MovieService.setWinnings(activmovie.getTitle(),Integer.parseInt(ticketsField.getText()));
 
             errorText.setText("Thank you for buying");
-        } catch (Exception e) {
+        } catch (EmptyFieldException|ExceededSitsException|WrongCardNumberException e) {
+
             errorText.setText(e.getMessage());
+            System.out.println();
         }
     }
 
-    void setDayChoiceBox(){
+    public void setDayChoiceBox(){
         for (Date date: activmovie.getDate())
             if(!dayChoiceBox.getItems().contains(date.getDay()))
                 dayChoiceBox.getItems().add(date.getDay());
@@ -103,6 +114,7 @@ public class BuyTicketFormController {
     public static void setMovie(Movie mov) {
         activmovie = mov;
     }
-
-
+    public static Movie getActivmovie() { return activmovie; }
+    public void setChosenDate(Date chosenDate) { this.chosenDate = chosenDate; }
+    public void setSwh(int swh) {this.swh = swh; }
 }

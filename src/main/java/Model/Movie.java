@@ -12,7 +12,7 @@ public class Movie {
     private String trailer;
     private String image;
     private  double price;
-    private List<Date> date;
+    private List<Date> date=new ArrayList<>();
     private List<String> comments=new ArrayList<>();
     private double winnings;
     private static double winningsTotal;

@@ -34,16 +34,18 @@ import java.util.Objects;
 public class MovieService {
     //DECLARATIONS
     private static MoviesPageController mpc;
-    private static AdministratorPageController apc;
+    static AdministratorPageController apc;
     private static MovieDetailsPageController mdpc;
     private static MovieDetailsAdminPageController amdpc;
 
-    private static List<Movie> movies=new ArrayList<>();
-    private static List<Button> movieButton=new ArrayList<>();
+    static List<Movie> movies=new ArrayList<>();
+    static List<Button> movieButton=new ArrayList<>();
 
-    private static final Path MOVIES_PATH = FileSystemService.getPathToFile("config", "movies.json");
+    static final Path MOVIES_PATH = FileSystemService.getPathToFile("config", "movies.json");
 
     private static String activUser;
+
+
     private static Movie activMovie;
     private static int which;
 
@@ -141,7 +143,9 @@ public class MovieService {
 
         ImageView imageView = DesignImage(movie.getImage());
 
+
         Button button=new Button("",imageView);
+        button.setId(movie.getTitle()); //need for a test
         button.setPrefSize(285,390);
         button.setStyle("-fx-border-color: transparent;-fx-background-color: transparent; ");
         button.setTooltip(new Tooltip(movie.getTitle()));
@@ -244,7 +248,7 @@ public class MovieService {
     /******************************************************
      * CHECK IF THE INORMATION FOR BUYING TICKETS ARE GOOD*
      ******************************************************/
-    public static void checkBuy(String ticketsField, int avaliableSits, String cardNumberField) throws Exception{
+    public static void checkBuy(String ticketsField, int avaliableSits, String cardNumberField) throws EmptyFieldException,ExceededSitsException,WrongCardNumberException{
         if(ticketsField.equals("")) throw new EmptyFieldException();
         if(Integer.parseInt(ticketsField)>avaliableSits) throw new ExceededSitsException();
         if(cardNumberField.length()!=16) throw new WrongCardNumberException();
@@ -302,6 +306,7 @@ public class MovieService {
      * IF TICKETS ARE SELL, WE UPDATE (UN)AVALIABLE SITS FOR THAT MOVIE AT THAT DATE *
      *********************************************************************************/
     public static void setSits(Date date){
+        if(movies.indexOf(activMovie)!=-1) //need for a test
         for (Date datem: movies.get(movies.indexOf(activMovie)).getDate())
             if(Objects.equals(datem.getHour(),date.getHour()) && Objects.equals(datem.getDay(),date.getDay()))
             {
@@ -339,4 +344,9 @@ public class MovieService {
         return sum;
     }
 
+    public static List<Movie> getMovies(){
+        return movies;
+    }
+
+    public static void setActivMovie(Movie activMovie) { MovieService.activMovie = activMovie; }
 }

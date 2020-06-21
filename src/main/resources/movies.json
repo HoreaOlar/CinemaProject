@@ -4,9 +4,14 @@
   "trailer" : "https://content.video.imedia.ro/storage/movie/b5/ee/1z/1jtxb5ee1z_mp4_720p_1575063168.mp4",
   "image" : "https://images-na.ssl-images-amazon.com/images/I/81nXcPXv69L.jpg",
   "price" : 10.1,
-  "date" : [ ],
-  "comments" : [ "This is the best review ever, bitch!" ],
-  "winnings" : 0
+  "date" : [ {
+    "day" : "Monday",
+    "hour" : "10:00",
+    "occupiedSits" : 0,
+    "avaliableSits" : 10
+  } ],
+  "comments" : [],
+  "winnings" : 2
 }, {
   "title" : "White Chicks",
   "description" : "În comedia extrem de amuzantă a Revolution Studios, Două pupeze albe, Shawn și Marlon Wayans interpretează rolul a doi agenți FBI ambițioși, dar ghinioniști, care acționează sub acoperire ca două tinere debutante în înalta societate, în stațiunea de lux Hamptons, pentru a investiga un grup de răpitori. În timp ce își fac intrarea cu pompă în cadrul evenimentului social al anului, cei doi află că este mult mai greu decât pare să pătrunzi în înalta societate.\n\nÎn ciuda eforturilor, agenții Marcus și Kevin Copeland (Marlon și Shawn Wayans) ajung pe cea mai joasă treaptă în ierharhia din cadrul FBI, dominată de o concurență acerbă. Cea mai recentă acțiune a lor a fost un eșec și slujbele atârnă de un fir de ață. Când se descoperă că se pune la cale un scenariul pentru răpirea a două răsfățate surori cu poziție socială înaltă, Brittany și Tiffany Wilson (Maitland Ward și Anne Dudek), cazul important este încredințat rivalilor lui Marcus și Kevin, agenții Vincent Gomez (Eddie Velez) și Jake Harper (Lochlyn Munro).\n",
@@ -15,7 +20,7 @@
   "price" : 10.1,
   "date" : [ ],
   "comments" : [ "a\nana", "a\n", "raul\nIoane haiii la Marie, ca e filmul cu blonde, nu ala cu dan negru, ala cu ijk, dar e fain maiiiiiiiiiiiiiiii", "raul\nuhuhuujbiubihjbihjbijbjb " ],
-  "winnings" : 0
+  "winnings" : 4
 }, {
   "title" : "Blestemul pământului Blestemul iubirii",
   "description" : "Ion (Șerban Ionescu), un țăran sărac din satul Prislop, vrea să intre și el în rândul celor bogați. Planul său este de a-l sili pe Vasile Baciu (Petre Gheorghiu), unul dintre bogătașii satului, să i-o dea de soție pe fiica sa, Ana (Ioana Crăciunescu), și, o dată cu ea, și pământurile. Ana rămâne însărcinată, iar Ion așteaptă momentul tocmelii. În același timp, Ion e îndrăgostit pătimaș de Florica (Sorina Stănculescu), o fată frumoasă, dar săracă. Ion ar dori și zestrea Anei și iubirea Floricăi. Până la urmă, Ion se căsătorește cu Ana, care, disprețuită de toți, se va sinucide, iar Florica se căsătorește cu un fecior bogat, Gheorghe Buluc (Valentin Teodosiu), pe care însă nu-l iubește. Ion, încercând într-o noapte să se strecoare în patul ei, va cădea răpus de loviturile lui Gheorghe.",
